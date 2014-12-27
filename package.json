@@ -1,0 +1,57 @@
+{
+  "name": "gulp-svg-sprite",
+  "description": "SVG sprites & stacks galore — Gulp plugin wrapping around svg-sprite that reads in a bunch of SVG files, optimizes them and creates SVG sprites and CSS resources in various flavours",
+  "version": "1.0.0",
+  "homepage": "https://github.com/jkphl/gulp-svg-sprite",
+  "author": {
+    "name": "Joschi Kuphal",
+    "email": "joschi@kuphal.net",
+    "url": "https://jkphl.is"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jkphl/gulp-svg-sprite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jkphl/gulp-svg-sprite/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jkphl/gulp-svg-sprite/blob/master/LICENSE.txt"
+    }
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "dependencies": {
+    "svg-sprite": "^1.0.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "gulpplugin",
+    "icon",
+    "icons",
+    "svg",
+    "png",
+    "sprite",
+    "spritesheet",
+    "stack",
+    "generator",
+    "css",
+    "sass",
+    "less",
+    "stylus",
+    "stylesheet",
+    "inline",
+    "html",
+    "vector",
+    "rwd",
+    "retina",
+    "mustache"
+  ]
+}
