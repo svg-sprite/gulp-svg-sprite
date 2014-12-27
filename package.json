@@ -29,9 +29,14 @@
     "test": "./node_modules/.bin/mocha"
   },
   "dependencies": {
-    "svg-sprite": "^1.0.0"
+    "svg-sprite": "^1.0.0",
+    "through2": "^0.6.3",
+    "gulp-util": "^3.0.1"
   },
   "devDependencies": {},
+  "peerDependencies": {
+  	"vinyl": "^0.4.6"
+  },
   "keywords": [
     "gulpplugin",
     "icon",

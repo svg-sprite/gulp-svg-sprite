@@ -1,0 +1,8 @@
+.project
+*.md.html
+**/*.md.html
+/.settings
+/.buildpath
+/node_modules
+/npm-debug.log
+/tmp
