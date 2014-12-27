@@ -1,9 +1,21 @@
+'use strict';
+
+/**
+ * gulp-svg-sprite is a Gulp plugin for creating SVG sprites
+ *
+ * @see https://github.com/jkphl/gulp-svg-sprite
+ *
+ * @author Joschi Kuphal <joschi@kuphal.net> (https://github.com/jkphl)
+ * @copyright © 2014 Joschi Kuphal
+ * @license MIT https://raw.github.com/jkphl/gulp-svg-sprite/master/LICENSE.txt
+ */
+
 var through2 		= require('through2'),
 gutil				= require('gulp-util'),
 SVGSpriter			= require('svg-sprite'),
-PluginError			= gutil.PluginError;
+PluginError			= gutil.PluginError,
 
-const PLUGIN_NAME	= 'gulp-svg-sprite';
+PLUGIN_NAME			= 'gulp-svg-sprite';
 
 /**
  * Plugin level function
@@ -11,6 +23,7 @@ const PLUGIN_NAME	= 'gulp-svg-sprite';
  * @param {Object} config		SVGSpriter main configuration
  */
 function gulpSVGSprite(config) {
+	
 	var spriter		= new SVGSpriter(config);
 	
 	return through2.obj(function (file, enc, cb) {
@@ -31,6 +44,4 @@ function gulpSVGSprite(config) {
 	});
 }
 
-module.exports		= function(config) {
-	return gulpSVGSprite(config);
-}
+module.exports		= gulpSVGSprite;
