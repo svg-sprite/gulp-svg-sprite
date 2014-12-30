@@ -1,27 +1,23 @@
+'use strict';
+
+/**
+ * gulp-svg-sprite is a Gulp plugin for creating SVG sprites
+ *
+ * @see https://github.com/jkphl/gulp-svg-sprite
+ *
+ * @author Joschi Kuphal <joschi@kuphal.net> (https://github.com/jkphl)
+ * @copyright © 2014 Joschi Kuphal
+ * @license MIT https://raw.github.com/jkphl/gulp-svg-sprite/master/LICENSE.txt
+ */
+
 var gulp    	= require('gulp'),
-jshint			= require('gulp-jshint'),
-contribs		= require('gulp-contribs');
+jshint			= require('gulp-jshint');
 
 gulp.task('lint', function () {
-    gulp.src(['test/specs/**/*.js', '!test/fixtures/**', 'index.js'])
-            .pipe(jshint('test/specs/.jshintrc'))
-            .pipe(jshint.reporter('default'))
-            .pipe(jshint.reporter('fail'))
-});
-
-gulp.task('contribs', function () {
-    gulp.src('README.md')
-            .pipe(contribs())
-            .pipe(gulp.dest("./"))
+    gulp.src(['test/*.js', 'index.js'])
+        .pipe(jshint('.jshintrc'))
+        .pipe(jshint.reporter('default'))
+        .pipe(jshint.reporter('fail'))
 });
 
 gulp.task('default', ['lint']);
-
-gulp.task("docs", function () {
-
-    var yuidoc = require("gulp-yuidoc");
-
-    gulp.src(["./index.js"])
-        .pipe(yuidoc.parser({spaces: 4}))
-        .pipe(gulp.dest("./doc"));
-});

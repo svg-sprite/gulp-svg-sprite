@@ -1,5 +1,8 @@
 'use strict';
 
+/*jshint expr: true*/
+/*global describe, it */
+
 /**
  * gulp-svg-sprite is a Gulp plugin for creating SVG sprites
  *
@@ -11,7 +14,6 @@
  */
 
 var fs						= require('fs'),
-	es						= require('event-stream'),
 	should					= require('should'),
 	path					= require('path'),
 	glob					= require('glob'),
