@@ -194,14 +194,15 @@ Copyright © 2014 [Joschi Kuphal](https://jkphl.is) (<joschi@kuphal.net> / [@jkp
 
 The contained example SVG icons are part of the [Tango Icon Library]
 
-[npm-url]: https://npmjs.org/package/gulp-svg-sprite
-[npm-image]: https://badge.fury.io/js/gulp-svg-sprite.png
 
-[travis-url]: http://travis-ci.org/jkphl/gulp-svg-sprite
-[travis-image]: https://secure.travis-ci.org/jkphl/gulp-svg-sprite.png?branch=master
+[npm-url]: https://npmjs.org/package/grunt-svg-sprite
+[npm-image]: https://badge.fury.io/js/grunt-svg-sprite.png
 
-[coveralls-url]: https://coveralls.io/r/jkphl/gulp-svg-sprite
-[coveralls-image]: https://coveralls.io/repos/jkphl/gulp-svg-sprite/badge.png
+[travis-url]: http://travis-ci.org/jkphl/grunt-svg-sprite
+[travis-image]: https://secure.travis-ci.org/jkphl/grunt-svg-sprite.png
 
-[depstat-url]: https://david-dm.org/jkphl/gulp-svg-sprite
-[depstat-image]: https://david-dm.org/jkphl/gulp-svg-sprite.png
+[coveralls-url]: https://coveralls.io/r/jkphl/grunt-svg-sprite
+[coveralls-image]: https://img.shields.io/coveralls/jkphl/grunt-svg-sprite.svg
+
+[depstat-url]: https://david-dm.org/jkphl/grunt-svg-sprite
+[depstat-image]: https://david-dm.org/jkphl/grunt-svg-sprite.svg
