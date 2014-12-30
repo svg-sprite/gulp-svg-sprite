@@ -25,7 +25,8 @@ npm install --save-dev gulp-svg-sprite
 Then, add it to your `gulpfile.js`:
 
 ```javascript
-var svgSprite = require("gulp-svg-sprite");
+var gulp				= require('gulp'),
+svgSprite				= require('gulp-svg-sprite');
 
 gulp.src('assets/*.svg')
 	.pipe(svgSprite())
@@ -52,7 +53,8 @@ With gulp, there is no need to specifiy a **main output directory**, as the gene
 In this very basic example, mostly default settings will be applied to create a traditional CSS sprite (bundle of SVG sprite and CSS stylesheet).
 
 ```javascript
-var svgSprite			= require("gulp-svg-sprite"),
+var gulp				= require('gulp'),
+svgSprite				= require('gulp-svg-sprite'),
 config					= {
 	mode				: {
 		css				: {		// Activate the «css» mode
@@ -91,7 +93,8 @@ The following example is a little more complex:
 * We'll keep the intermediate SVG source files.
 
 ```javascript
-var svgSprite			= require("gulp-svg-sprite"),
+var gulp				= require('gulp'),
+svgSprite				= require('gulp-svg-sprite'),
 config					= {
 	shape				: {
 		dimension		: {			// Set maximum dimensions
@@ -136,6 +139,34 @@ out
         `-- sprite.view.svg
 ```
 
+### Error handling
+
+Errors might always happen — maybe there are some corrupted source SVG files, the default [SVGO](https://github.com/svg/svgo) plugin configuration is too aggressive or there's just an error in *svg-sprite*'s code. To make your tasks more robust, you might consider using [plumber](https://github.com/floatdrop/gulp-plumber) and adding your custom error handling:
+
+```javascript
+var gulp				= require('gulp'),
+svgSprite				= require('gulp-svg-sprite'),
+plumber					= require('gulp-plumber'),
+config					= {
+	mode				: {
+		css				: {
+			render		: {
+				css		: true
+			}
+		}
+	}
+};
+
+gulp.src('**/*.svg', {cwd: 'assets'})
+	.pipe(plumber())
+	.pipe(svgSprite(config))
+		.on('error', function(error){
+			/* Do some awesome error handling ... */
+		})
+	.pipe(gulp.dest('out'));
+```
+
+
 ### Advanced features
 
 For more advanced features like
@@ -150,12 +181,10 @@ please refer to the [svg-sprite manual](https://github.com/jkphl/svg-sprite).
 
 ## Release history
 
-#### v1.0.0
+#### v1.0.2
 
-*	First release of the new module generation, compatible with [svg-sprite 1.0.0](https://github.com/jkphl/svg-sprite#v100)
-*	Multiple sprite formats
-*	More intuitive configuration style
-*	Fewer dependencies
+*	Initial release, compatible with [svg-sprite 1.0.2](https://github.com/jkphl/svg-sprite/tree/v1.0.2)
+
 
 ## Legal
 
