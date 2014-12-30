@@ -26,14 +26,26 @@
     "node": ">= 0.10"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha"
+    "test": "istanbul test _mocha --report html -- test/*.js --reporter spec",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "dependencies": {
     "svg-sprite": "^1.0.0",
     "through2": "^0.6.3",
     "gulp-util": "^3.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "*",
+    "coveralls": "*",
+    "mocha-lcov-reporter": "*",
+    "istanbul": "*",
+    "event-stream": "*",
+    "should": "~4.4.2",
+    "glob": "~4.3.1",
+    "svg2png": "^1.1.0",
+  	"image-diff": "^1.0.1",
+  	"mkdirp": "^0.5.0"
+  },
   "peerDependencies": {
   	"vinyl": "^0.4.6"
   },
