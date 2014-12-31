@@ -29,9 +29,11 @@ var gulp				= require('gulp'),
 svgSprite				= require('gulp-svg-sprite');
 
 gulp.src('assets/*.svg')
-	.pipe(svgSprite())
+	.pipe(svgSprite( /* ... Insert your configuration here ... */ ))
 	.pipe(gulp.dest('out'));
 ```
+
+**NOTICE**: By default, *svg-sprite* **doesn't send any files downstream** unless you configure it. There are tons of options available — please see below for [some basic examples](#basic-example). Also, you should possibly [take care of errors](#error-handling) that might occur.
 
 ## API
 
@@ -55,6 +57,8 @@ In this very basic example, mostly default settings will be applied to create a 
 ```javascript
 var gulp				= require('gulp'),
 svgSprite				= require('gulp-svg-sprite'),
+
+// Basic configuration example
 config					= {
 	mode				: {
 		css				: {		// Activate the «css» mode
@@ -95,6 +99,8 @@ The following example is a little more complex:
 ```javascript
 var gulp				= require('gulp'),
 svgSprite				= require('gulp-svg-sprite'),
+
+// More complex configuration example
 config					= {
 	shape				: {
 		dimension		: {			// Set maximum dimensions
@@ -147,6 +153,8 @@ Errors might always happen — maybe there are some corrupted source SVG files, 
 var gulp				= require('gulp'),
 svgSprite				= require('gulp-svg-sprite'),
 plumber					= require('gulp-plumber'),
+
+// Basic configuration example
 config					= {
 	mode				: {
 		css				: {
