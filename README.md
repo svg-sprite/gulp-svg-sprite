@@ -189,8 +189,12 @@ please refer to the [svg-sprite manual](https://github.com/jkphl/svg-sprite).
 
 ## Release history
 
-#### v1.0.2
+#### v1.0.4 Bugfix release
+*	Compatible with [svg-sprite 1.0.4](https://github.com/jkphl/svg-sprite/tree/v1.0.4)
+*	Fixed XML & doctype declaration bug with inline sprites ([#2](https://github.com/jkphl/gulp-svg-sprite/issues/2))
 
+
+#### v1.0.2
 *	Initial release, compatible with [svg-sprite 1.0.2](https://github.com/jkphl/svg-sprite/tree/v1.0.2)
 
 
