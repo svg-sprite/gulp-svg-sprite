@@ -189,6 +189,11 @@ please refer to the [svg-sprite manual](https://github.com/jkphl/svg-sprite).
 
 ## Release history
 
+#### v1.0.6 Feature release
+* Compatible with [svg-sprite 1.0.6](https://github.com/jkphl/svg-sprite/tree/v1.0.6)
+* Made shape ID namespacing configurable ([grunt-svg-sprite #27](https://github.com/jkphl/grunt-svg-sprite/issues/27))
+* Added extended alignment options ([svg-sprite #33](https://github.com/jkphl/svg-sprite/issues/33))
+
 #### v1.0.5 Bufix release
 *	Compatible with [svg-sprite 1.0.5](https://github.com/jkphl/svg-sprite/tree/v1.0.5)
 *	Fixed regression bug with SVG stacks
