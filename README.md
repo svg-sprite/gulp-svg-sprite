@@ -189,6 +189,14 @@ please refer to the [svg-sprite manual](https://github.com/jkphl/svg-sprite).
 
 ## Release history
 
+#### v1.0.9 Maintenance release
+* Compatible with [svg-sprite 1.0.9](https://github.com/jkphl/svg-sprite/tree/v1.0.9)
+* Updated dependencies
+* Introduced `svg` getter in templating shape variables
+* Fixed logging error in SVGO optimization
+* Fixed missing XML namespaces in SVG stack 
+* Fixed cache busting errors with example HTML document 
+
 #### v1.0.8 Bugfix release
 * Compatible with [svg-sprite 1.0.8](https://github.com/jkphl/svg-sprite/tree/v1.0.8)
 * Fixed broken rendering template path resolution ([#29](https://github.com/jkphl/grunt-svg-sprite/issues/29))
