@@ -189,6 +189,10 @@ please refer to the [svg-sprite manual](https://github.com/jkphl/svg-sprite).
 
 ## Release history
 
+#### v1.0.10 Feature release
+* Compatible with [svg-sprite 1.0.10](https://github.com/jkphl/svg-sprite/tree/v1.0.10)
+* Added support for custom mode keys
+
 #### v1.0.9 Maintenance release
 * Compatible with [svg-sprite 1.0.9](https://github.com/jkphl/svg-sprite/tree/v1.0.9)
 * Updated dependencies
@@ -212,16 +216,15 @@ please refer to the [svg-sprite manual](https://github.com/jkphl/svg-sprite).
 * Added extended alignment options ([svg-sprite #33](https://github.com/jkphl/svg-sprite/issues/33))
 
 #### v1.0.5 Bufix release
-*	Compatible with [svg-sprite 1.0.5](https://github.com/jkphl/svg-sprite/tree/v1.0.5)
-*	Fixed regression bug with SVG stacks
+* Compatible with [svg-sprite 1.0.5](https://github.com/jkphl/svg-sprite/tree/v1.0.5)
+* Fixed regression bug with SVG stacks
 
 #### v1.0.4 Bugfix release
-*	Compatible with [svg-sprite 1.0.4](https://github.com/jkphl/svg-sprite/tree/v1.0.4)
-*	Fixed XML & doctype declaration bug with inline sprites ([#2](https://github.com/jkphl/gulp-svg-sprite/issues/2))
-
+* Compatible with [svg-sprite 1.0.4](https://github.com/jkphl/svg-sprite/tree/v1.0.4)
+* Fixed XML & doctype declaration bug with inline sprites ([#2](https://github.com/jkphl/gulp-svg-sprite/issues/2))
 
 #### v1.0.2
-*	Initial release, compatible with [svg-sprite 1.0.2](https://github.com/jkphl/svg-sprite/tree/v1.0.2)
+* Initial release, compatible with [svg-sprite 1.0.2](https://github.com/jkphl/svg-sprite/tree/v1.0.2)
 
 
 ## Legal
