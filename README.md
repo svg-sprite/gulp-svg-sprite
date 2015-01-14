@@ -189,6 +189,10 @@ please refer to the [svg-sprite manual](https://github.com/jkphl/svg-sprite).
 
 ## Release history
 
+#### v1.0.11 Bugfix release
+* Compatible with [svg-sprite 1.0.11](https://github.com/jkphl/svg-sprite/tree/v1.0.11)
+* Fixed coordinate distortion in CSS sprites ([svg-sprite #41](https://github.com/jkphl/svg-sprite/issues/41))
+
 #### v1.0.10 Feature release
 * Compatible with [svg-sprite 1.0.10](https://github.com/jkphl/svg-sprite/tree/v1.0.10)
 * Added support for custom mode keys
