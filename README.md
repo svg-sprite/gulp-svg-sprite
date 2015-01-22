@@ -39,7 +39,7 @@ gulp.src('assets/*.svg')
 
 ### svgSprite(options)
 
-As `options` argument you may provide a [main configuration object](https://github.com/jkphl/svg-sprite#main-configuration) as described in the *svg-sprite* manual. Configuration-wise, *svg-sprite* and *gulp-svg-sprite* differ only in one respect:
+As `options` argument you may provide a [main configuration object](https://github.com/jkphl/svg-sprite#configuration) as described in the *svg-sprite* manual. Configuration-wise, *svg-sprite* and *gulp-svg-sprite* differ only in one respect:
 
 #### ~~options.dest~~
 
