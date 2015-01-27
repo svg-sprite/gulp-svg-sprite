@@ -179,8 +179,8 @@ gulp.src('**/*.svg', {cwd: 'assets'})
 
 For more advanced features like
 
-*	[custom transforms](https://github.com/jkphl/svg-sprite#b-2-custom-transformations-object-values),
-*	[meta data injection](https://github.com/jkphl/svg-sprite#a-1-meta-data-injection),
+*	[custom transforms](https://github.com/jkphl/svg-sprite#b2-custom-transformations-object-values),
+*	[meta data injection](https://github.com/jkphl/svg-sprite#a1-meta-data-injection),
 *	customizing output templates or
 *	introducing new output formats
 
