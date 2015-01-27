@@ -3,11 +3,11 @@
 
 is a [gulp](https://github.com/wearefractal/gulp) plugin wrapping around [svg-sprite](https://github.com/jkphl/svg-sprite) which **reads in a bunch of [SVG](http://www.w3.org/TR/SVG/) files**, optimizes them and creates **SVG sprites** in various flavours:
 
-1. Traditional **CSS sprites** for use with background images ([configuration](#d-1-css-mode))
-2. CSS sprites with **pre-defined SVG views**, suitable for foreground images as well ([configuration](#d-2-view-mode))
-3. Inline sprites using the **`<defs>` element** ([configuration](#d-3-defs-mode))
-4. Inline sprites using the **`<symbol>` element** ([configuration](#d-4-symbol-mode))
-5. **SVG stacks** ([configuration](#d-5-stack-mode))
+1. Traditional **CSS sprites** for use with background images ([configuration](https://github.com/jkphl/svg-sprite#d1-css-mode))
+2. CSS sprites with **pre-defined SVG views**, suitable for foreground images as well ([configuration](https://github.com/jkphl/svg-sprite#d2-view-mode))
+3. Inline sprites using the **`<defs>` element** ([configuration](https://github.com/jkphl/svg-sprite#d3-defs-mode))
+4. Inline sprites using the **`<symbol>` element** ([configuration](https://github.com/jkphl/svg-sprite#d4-symbol-mode))
+5. **SVG stacks** ([configuration](https://github.com/jkphl/svg-sprite#d5-stack-mode))
 
 ## Features & configuration? → [svg-sprite](https://github.com/jkphl/svg-sprite)
 
