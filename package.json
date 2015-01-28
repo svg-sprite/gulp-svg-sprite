@@ -1,7 +1,7 @@
 {
 	"name": "gulp-svg-sprite",
 	"description": "SVG sprites & stacks galore — Gulp plugin wrapping around svg-sprite that reads in a bunch of SVG files, optimizes them and creates SVG sprites and CSS resources in various flavours",
-	"version": "1.0.12",
+	"version": "1.0.13",
 	"homepage": "https://github.com/jkphl/gulp-svg-sprite",
 	"author": {
 		"name": "Joschi Kuphal",
@@ -30,7 +30,7 @@
 		"coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
 	},
 	"dependencies": {
-		"svg-sprite": "^1.0.12",
+		"svg-sprite": "^1.0.13",
 		"through2": "^0.6.3",
 		"gulp-util": "^3.0.1"
 	},
