@@ -1,17 +1,18 @@
 # gulp-svg-sprite [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]  [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url]
 ===============
 
-is a [gulp](https://github.com/wearefractal/gulp) plugin wrapping around [svg-sprite](https://github.com/jkphl/svg-sprite) which **reads in a bunch of [SVG](http://www.w3.org/TR/SVG/) files**, optimizes them and creates **SVG sprites** in various flavours:
+is a Gulp plugin wrapping around [svg-sprite](https://github.com/jkphl/svg-sprite) which **takes a bunch of [SVG](http://www.w3.org/TR/SVG/) files**, optimizes them and bakes them into **SVG sprites** of several types:
 
-1. Traditional **CSS sprites** for use with background images ([configuration](https://github.com/jkphl/svg-sprite#d1-css-mode))
-2. CSS sprites with **pre-defined SVG views**, suitable for foreground images as well ([configuration](https://github.com/jkphl/svg-sprite#d2-view-mode))
-3. Inline sprites using the **`<defs>` element** ([configuration](https://github.com/jkphl/svg-sprite#d3-defs-mode))
-4. Inline sprites using the **`<symbol>` element** ([configuration](https://github.com/jkphl/svg-sprite#d4-symbol-mode))
-5. **SVG stacks** ([configuration](https://github.com/jkphl/svg-sprite#d5-stack-mode))
+*	Traditional [CSS sprites](http://en.wikipedia.org/wiki/Sprite_(computer_graphics)#Sprites_by_CSS) for use as background images,
+*	CSS sprites with **pre-defined `<view>` elements**, useful for foreground images as well,
+*	inline sprites using the **`<defs>` element**,
+*	inline sprites using the **`<symbol>` element**
+*	and [SVG stacks](http://simurai.com/blog/2012/04/02/svg-stacks/).
+
 
 ## Features & configuration? → [svg-sprite](https://github.com/jkphl/svg-sprite)
 
-This manual covers only gulp specific installation and configuration aspects. For a full list of features and options, please see the [svg-sprite manual](https://github.com/jkphl/svg-sprite).
+This document covers only gulp specific installation and configuration aspects. For a full list of features and options, please see the [svg-sprite manual](https://github.com/jkphl/svg-sprite).
 
 
 ## Usage
@@ -35,20 +36,24 @@ gulp.src('assets/*.svg')
 
 **NOTICE**: By default, *svg-sprite* **doesn't send any files downstream** unless you configure it. There are tons of options available — please see below for [some basic examples](#basic-example). Also, you should possibly [take care of errors](#error-handling) that might occur.
 
+
 ## API
+
 
 ### svgSprite(options)
 
-As `options` argument you may provide a [main configuration object](https://github.com/jkphl/svg-sprite#configuration) as described in the *svg-sprite* manual. Configuration-wise, *svg-sprite* and *gulp-svg-sprite* differ only in one respect:
+As `options` argument you may provide a [main configuration object](https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md) as described in the *svg-sprite* manual. Configuration-wise, *svg-sprite* and *gulp-svg-sprite* differ only in one respect:
 
 #### ~~options.dest~~
 
 Type: `String`
 Default value: `'.'`
 
-With gulp, there is no need to specifiy a **main output directory**, as the generated files are piped to the next step of the running task anyway. The `options.dest` value (if given) is simply ignored.
+With Gulp, there is no need to specifiy a **main output directory**, as the generated files are piped to the next step of the running task anyway. The `options.dest` value (if given) is simply ignored.
+
 
 ## Examples
+
 
 ### Basic example
 
@@ -76,7 +81,7 @@ gulp.src('**/*.svg', {cwd: 'assets'})
 
 The following files and directories are created:
 
-```bash
+```
 out
 `-- css
     |-- sprite.css
@@ -85,6 +90,7 @@ out
 ```
 
 > The cryptical looking part in the SVG's file name is the result of *svg-sprite*'s cache busting feature which is enabled by default for CSS sprites. We'll turn this off in the next example.
+
 
 ### More complex example
 
@@ -130,7 +136,7 @@ gulp.src('**/*.svg', {cwd: 'assets'})
 
 The following files and directories are created:
 
-```javascript
+```
 out
 |-- intermediate-svg
 |   |-- weather-clear.svg
@@ -175,80 +181,27 @@ gulp.src('**/*.svg', {cwd: 'assets'})
 ```
 
 
-### Advanced features
+#### Advanced features
 
 For more advanced features like
 
-*	[custom transforms](https://github.com/jkphl/svg-sprite#b2-custom-transformations-object-values),
-*	[meta data injection](https://github.com/jkphl/svg-sprite#a1-meta-data-injection),
-*	customizing output templates or
+*	[custom transformation](https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md#svg-transformations),
+*	[meta data injection](https://github.com/jkphl/svg-sprite/blob/master/docs/meta-data.md),
+*	[customizing output templates](https://github.com/jkphl/svg-sprite/blob/master/docs/templating.md) or
 *	introducing new output formats
 
 please refer to the [svg-sprite manual](https://github.com/jkphl/svg-sprite).
 
 
-## Release history
+Changelog
+---------
 
-#### v1.0.13 Maintenance (2015-01-28)
-* Compatible with [svg-sprite 1.0.13](https://github.com/jkphl/svg-sprite/tree/v1.0.13)
-* Fixed windows path separator bug ([#6](https://github.com/jkphl/gulp-svg-sprite/issues/6))
-* Made dimension attributes (width & height) optional ([svg-sprite #45](https://github.com/jkphl/svg-sprite/issues/45))
-* Added cache busting option for non-CSS sprites ([svg-sprite #48](https://github.com/jkphl/svg-sprite/issues/48))
-
-#### v1.0.12 Maintenance (2015-01-27)
-* Compatible with [svg-sprite 1.0.12](https://github.com/jkphl/svg-sprite/tree/v1.0.12)
-* Added dimension CSS output for non-CSS sprites ([#45](https://github.com/jkphl/svg-sprite/issues/45))
-* Bumped lodash dependency version ([svg-sprite #44](https://github.com/jkphl/svg-sprite/issues/44))
-
-#### v1.0.11 Bugfix release
-* Compatible with [svg-sprite 1.0.11](https://github.com/jkphl/svg-sprite/tree/v1.0.11)
-* Fixed coordinate distortion in CSS sprites ([svg-sprite #41](https://github.com/jkphl/svg-sprite/issues/41))
-
-#### v1.0.10 Feature release
-* Compatible with [svg-sprite 1.0.10](https://github.com/jkphl/svg-sprite/tree/v1.0.10)
-* Added support for custom mode keys
-
-#### v1.0.9 Maintenance release
-* Compatible with [svg-sprite 1.0.9](https://github.com/jkphl/svg-sprite/tree/v1.0.9)
-* Updated dependencies
-* Introduced `svg` getter in templating shape variables
-* Fixed logging error in SVGO optimization
-* Fixed missing XML namespaces in SVG stack 
-* Fixed cache busting errors with example HTML document 
-
-#### v1.0.8 Bugfix release
-* Compatible with [svg-sprite 1.0.8](https://github.com/jkphl/svg-sprite/tree/v1.0.8)
-* Fixed broken rendering template path resolution ([#29](https://github.com/jkphl/grunt-svg-sprite/issues/29))
-
-#### v1.0.7 Feature & bugfix release
-* Compatible with [svg-sprite 1.0.7](https://github.com/jkphl/svg-sprite/tree/v1.0.7)
-* Improved error handling
-* Improved XML & DOCTYPE declaration handling and fixed ([grunt-svg-sprite #28](https://github.com/jkphl/grunt-svg-sprite/issues/28))
-
-#### v1.0.6 Feature release
-* Compatible with [svg-sprite 1.0.6](https://github.com/jkphl/svg-sprite/tree/v1.0.6)
-* Made shape ID namespacing configurable ([grunt-svg-sprite #27](https://github.com/jkphl/grunt-svg-sprite/issues/27))
-* Added extended alignment options ([svg-sprite #33](https://github.com/jkphl/svg-sprite/issues/33))
-
-#### v1.0.5 Bufix release
-* Compatible with [svg-sprite 1.0.5](https://github.com/jkphl/svg-sprite/tree/v1.0.5)
-* Fixed regression bug with SVG stacks
-
-#### v1.0.4 Bugfix release
-* Compatible with [svg-sprite 1.0.4](https://github.com/jkphl/svg-sprite/tree/v1.0.4)
-* Fixed XML & doctype declaration bug with inline sprites ([#2](https://github.com/jkphl/gulp-svg-sprite/issues/2))
-
-#### v1.0.2
-* Initial release, compatible with [svg-sprite 1.0.2](https://github.com/jkphl/svg-sprite/tree/v1.0.2)
+Please refer to the [changelog](CHANGELOG.md) for a complete release history.
 
 
-## Legal
-
-Copyright © 2015 [Joschi Kuphal](https://jkphl.is) (<joschi@kuphal.net> / [@jkphl](https://twitter.com/jkphl))
-
-*gulp-svg-sprite* is licensed under the terms of the [MIT license](LICENSE.txt).
-
-The contained example SVG icons are part of the [Tango Icon Library]
+Legal
+-----
+Copyright © 2015 Joschi Kuphal <joschi@kuphal.net> / [@jkphl](https://twitter.com/jkphl). *svg-sprite* is licensed under the terms of the [MIT license](LICENSE.txt). The contained example SVG icons are part of the [Tango Icon Library](http://tango.freedesktop.org/Tango_Icon_Library) and belong to the Public Domain.
 
 
 [npm-url]: https://npmjs.org/package/gulp-svg-sprite
