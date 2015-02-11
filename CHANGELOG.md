@@ -1,3 +1,10 @@
+## 1.0.16 Maintenance release (2015-02-11)
+* Compatible with [svg-sprite 1.0.16](https://github.com/jkphl/svg-sprite/tree/v1.0.16)
+* Fixed missing file extensions with CSS resources ([svg-sprite #54](https://github.com/jkphl/svg-sprite/issues/54))
+* Fixed broken sprite URL in css/view example HTML documents ([svg-sprite #53](https://github.com/jkphl/svg-sprite/issues/53))
+* Fixed wrong base path for intermediate SVG shapes
+* Removed the automatic dot prefix for CSS selectors ([svg-sprite #55](https://github.com/jkphl/svg-sprite/issues/55))
+
 ## v1.0.14 Maintenance release (2015-02-08)
 * Compatible with [svg-sprite 1.0.14](https://github.com/jkphl/svg-sprite/tree/v1.0.14)
 * Restructured documentation
