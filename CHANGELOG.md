@@ -1,3 +1,10 @@
+## 1.0.17 Maintenance release (2015-02-20)
+* Compatible with [svg-sprite 1.0.17](https://github.com/jkphl/svg-sprite/tree/v1.0.17)
+* Optimized stylesheet templates
+* Introduced boolean hasCommon template variable
+* Updated dependencies
+* Fixed incomplete dimension CSS selector suffix ([grunt-svg-sprite #31](https://github.com/jkphl/grunt-svg-sprite/issues/31))
+
 ## 1.0.16 Maintenance release (2015-02-11)
 * Compatible with [svg-sprite 1.0.16](https://github.com/jkphl/svg-sprite/tree/v1.0.16)
 * Fixed missing file extensions with CSS resources ([svg-sprite #54](https://github.com/jkphl/svg-sprite/issues/54))
