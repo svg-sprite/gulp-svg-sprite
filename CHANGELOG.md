@@ -1,3 +1,7 @@
+## 1.0.18 Bugfix release (2015-02-20)
+* Compatible with [svg-sprite 1.0.18](https://github.com/jkphl/svg-sprite/tree/v1.0.18)
+* Removed excessive console output
+
 ## 1.0.17 Maintenance release (2015-02-20)
 * Compatible with [svg-sprite 1.0.17](https://github.com/jkphl/svg-sprite/tree/v1.0.17)
 * Optimized stylesheet templates
