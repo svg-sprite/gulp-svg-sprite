@@ -1,3 +1,10 @@
+## 1.0.19 Maintenance release (2015-03-08)
+* Compatible with [svg-sprite 1.0.19](https://github.com/jkphl/svg-sprite/tree/v1.0.19)
+* Changed alias for shape.dest CLI option
+* Updated dependencies
+* Fixed ID bug with view sprites
+* Fixed sprite CSS path calculation
+
 ## 1.0.18 Bugfix release (2015-02-20)
 * Compatible with [svg-sprite 1.0.18](https://github.com/jkphl/svg-sprite/tree/v1.0.18)
 * Removed excessive console output
