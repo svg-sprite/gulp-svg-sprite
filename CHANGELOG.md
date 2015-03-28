@@ -1,3 +1,8 @@
+## 1.0.20 maintenance release (2015-03-28)
+* Compatible with [svg-sprite 1.0.20](https://github.com/jkphl/svg-sprite/tree/v1.0.20)
+* Fixed several CLI bugs in svg-sprite ([svg-sprite #65](https://github.com/jkphl/svg-sprite/issues/65))
+* Updated dependencies
+
 ## 1.0.19 Maintenance release (2015-03-08)
 * Compatible with [svg-sprite 1.0.19](https://github.com/jkphl/svg-sprite/tree/v1.0.19)
 * Changed alias for shape.dest CLI option
