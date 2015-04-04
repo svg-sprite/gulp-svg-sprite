@@ -1,3 +1,8 @@
+## 1.1.0 Maintenance release (2015-04-04)
+* Compatible with [svg-sprite 1.1.0](https://github.com/jkphl/svg-sprite/tree/v1.1.0)
+* Added mixin option ([svg-sprite #66](https://github.com/jkphl/svg-sprite/issues/66); ATTENTION: May break custom templates!)
+* Updated development dependencies
+
 ## 1.0.20 maintenance release (2015-03-28)
 * Compatible with [svg-sprite 1.0.20](https://github.com/jkphl/svg-sprite/tree/v1.0.20)
 * Fixed several CLI bugs in svg-sprite ([svg-sprite #65](https://github.com/jkphl/svg-sprite/issues/65))
