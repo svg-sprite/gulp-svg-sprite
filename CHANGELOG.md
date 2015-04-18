@@ -1,3 +1,12 @@
+## 1.1.1 Bugfix release (2015-04-19)
+* Compatible with [svg-sprite 1.1.1](https://github.com/jkphl/svg-sprite/tree/v1.1.1)
+* Updated dependencies & development dependencies
+* Added viewBox attribute to SVG stacks ([svg-sprite #73](https://github.com/jkphl/svg-sprite/issues/73))
+* Fixed example document path resolution bug ([svg-sprite #70](https://github.com/jkphl/svg-sprite/issues/70))
+* Allow negative viewBox values ([svg-sprite #72](https://github.com/jkphl/svg-sprite/pull/72))
+* Fixed symbol example document ([svg-sprite #71](https://github.com/jkphl/svg-sprite/pull/71))
+* Improved error log for invalid SVG files ([svg-sprite #69](https://github.com/jkphl/svg-sprite/issues/69))
+
 ## 1.1.0 Maintenance release (2015-04-04)
 * Compatible with [svg-sprite 1.1.0](https://github.com/jkphl/svg-sprite/tree/v1.1.0)
 * Added mixin option ([svg-sprite #66](https://github.com/jkphl/svg-sprite/issues/66); ATTENTION: May break custom templates!)
