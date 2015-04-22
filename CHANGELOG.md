@@ -1,3 +1,10 @@
+## 1.1.2 Bugfix release (2015-04-22)
+* Compatible with [svg-sprite 1.1.2](https://github.com/jkphl/svg-sprite/tree/v1.1.2)
+* Fixed symbol example template regression bug ([svg-sprite #70](https://github.com/jkphl/svg-sprite/issues/70#issuecomment-95307588))
+* Added mixin option to CLI arguments
+* Fixed boolean CLI argument notation ([svg-sprite #76](https://github.com/jkphl/svg-sprite/issues/76))
+* Added whitespace replacement for shape IDs ([svg-sprite #77](https://github.com/jkphl/svg-sprite/issues/77))
+
 ## 1.1.1 Bugfix release (2015-04-19)
 * Compatible with [svg-sprite 1.1.1](https://github.com/jkphl/svg-sprite/tree/v1.1.1)
 * Updated dependencies & development dependencies
