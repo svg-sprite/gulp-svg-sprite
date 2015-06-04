@@ -14,12 +14,12 @@ var through2 						= require('through2'),
 	gutil							= require('gulp-util'),
 	SVGSpriter						= require('svg-sprite'),
 	PluginError						= gutil.PluginError,
-	
+
 	PLUGIN_NAME						= 'gulp-svg-sprite';
 
 /**
  * Plugin level function
- * 
+ *
  * @param {Object} config			SVGSpriter main configuration
  */
 function gulpSVGSprite(config) {
@@ -36,15 +36,15 @@ function gulpSVGSprite(config) {
 
 		return pError;
 	}
-	
+
 	// Instanciate spriter instance
 	var spriter						= new SVGSpriter(config);
-	
+
 	// Intercept error log and convert to plugin errors
 	spriter.config.log.error		= function(message, error) {
 		this.emit('error', extendError(new PluginError(PLUGIN_NAME, message), error));
 	};
-	
+
 	return through2.obj(function (file, enc, cb) {
 		var error					= null;
 		try {
@@ -53,16 +53,18 @@ function gulpSVGSprite(config) {
 			error					= (!e.plugin || (e.plugin !== PLUGIN_NAME)) ? extendError(new PluginError(PLUGIN_NAME, e.message), e) : e;
 		}
 		return cb(error);
-		
+
 	}, function(cb) {
 		var stream 					= this;
-		spriter.compile(function(error, result /*, data*/){
+		spriter.compile(function(error, result, data){
 			if (error) {
 				stream.emit('error', new PluginError(PLUGIN_NAME, error));
 			} else {
-				for (var mode in result) {
-					for (var resource in result[mode]) {
-						stream.push(result[mode][resource]);
+				if (data.css.shapes.length > 0) {
+					for (var mode in result) {
+						for (var resource in result[mode]) {
+							stream.push(result[mode][resource]);
+						}
 					}
 				}
 			}
