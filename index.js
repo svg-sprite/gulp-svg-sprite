@@ -39,6 +39,7 @@ function gulpSVGSprite(config) {
 
 	// Instanciate spriter instance
 	var spriter						= new SVGSpriter(config);
+	var shapes						= 0;
 
 	// Intercept error log and convert to plugin errors
 	spriter.config.log.error		= function(message, error) {
@@ -49,6 +50,7 @@ function gulpSVGSprite(config) {
 		var error					= null;
 		try {
 			spriter.add(file);
+			++shapes;
 		} catch(e) {
 			error					= (!e.plugin || (e.plugin !== PLUGIN_NAME)) ? extendError(new PluginError(PLUGIN_NAME, e.message), e) : e;
 		}
@@ -59,12 +61,10 @@ function gulpSVGSprite(config) {
 		spriter.compile(function(error, result, data){
 			if (error) {
 				stream.emit('error', new PluginError(PLUGIN_NAME, error));
-			} else {
-				if (data.css.shapes.length > 0) {
-					for (var mode in result) {
-						for (var resource in result[mode]) {
-							stream.push(result[mode][resource]);
-						}
+			} else if (shapes > 0) {
+				for (var mode in result) {
+					for (var resource in result[mode]) {
+						stream.push(result[mode][resource]);
 					}
 				}
 			}
