@@ -58,7 +58,7 @@ function gulpSVGSprite(config) {
 
 	}, function(cb) {
 		var stream 					= this;
-		spriter.compile(function(error, result, data){
+		spriter.compile(function(error, result /*, data*/){
 			if (error) {
 				stream.emit('error', new PluginError(PLUGIN_NAME, error));
 			} else if (shapes > 0) {
