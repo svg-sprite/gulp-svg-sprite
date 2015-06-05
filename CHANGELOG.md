@@ -1,3 +1,8 @@
+## 1.2.2 Maintenance release (2016-06-05)
+* Compatible with [svg-sprite 1.2.2](https://github.com/jkphl/svg-sprite/tree/v1.2.2)
+* Introduced "icon" box sizing strategy ([svg-sprite #57](https://github.com/jkphl/svg-sprite/pull/57), [grunt-svg-sprite #35](https://github.com/jkphl/grunt-svg-sprite/issues/35#issuecomment-74232726))
+* Fixed regression bug introduced by [#23](https://github.com/jkphl/gulp-svg-sprite/pull/23) ([#24](https://github.com/jkphl/gulp-svg-sprite/issues/24))
+
 ## 1.2.1 Feature release (2016-06-04)
 * Compatible with [svg-sprite 1.2.1](https://github.com/jkphl/svg-sprite/tree/v1.2.1)
 * Updated dependencies & development dependencies ([svg-sprite #67](https://github.com/jkphl/svg-sprite/pull/67), [svg-sprite #82](https://github.com/jkphl/svg-sprite/issues/82))
