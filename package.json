@@ -1,13 +1,9 @@
 {
 	"name": "gulp-svg-sprite",
 	"description": "SVG sprites & stacks galore — Gulp plugin wrapping around svg-sprite that reads in a bunch of SVG files, optimizes them and creates SVG sprites and CSS resources in various flavours",
-	"version": "1.1.2",
+	"version": "1.2.1",
 	"homepage": "https://github.com/jkphl/gulp-svg-sprite",
-	"author": {
-		"name": "Joschi Kuphal",
-		"email": "joschi@kuphal.net",
-		"url": "https://jkphl.is"
-	},
+	"author": "Joschi Kuphal <joschi@kuphal.net> (https://jkphl.is)",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/jkphl/gulp-svg-sprite.git"
@@ -15,24 +11,22 @@
 	"bugs": {
 		"url": "https://github.com/jkphl/gulp-svg-sprite/issues"
 	},
-	"licenses": [
-		{
-			"type": "MIT",
-			"url": "https://github.com/jkphl/gulp-svg-sprite/blob/master/LICENSE.txt"
-		}
-	],
-	"main": "index.js",
+	"license": "MIT",
 	"engines": {
-		"node": ">= 0.10"
+		"node": ">= 0.10.0"
 	},
 	"scripts": {
-		"test": "istanbul test _mocha --report html -- test/*.js --reporter spec",
+		"test": "gulp && istanbul test _mocha --report html -- test/*.js --reporter spec",
 		"coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
 	},
+	"files": [
+		"index.js",
+		"CHANGELOG.md"
+	],
 	"dependencies": {
-		"svg-sprite": "^1.1.2",
+		"svg-sprite": "~1.2.1",
 		"through2": "^1.1.1",
-		"gulp-util": "^3.0.4"
+		"gulp-util": "^3.0.5"
 	},
 	"devDependencies": {
 		"mocha": "*",
@@ -40,14 +34,14 @@
 		"mocha-lcov-reporter": "*",
 		"istanbul": "*",
 		"event-stream": "*",
-		"should": "~6.0.1",
-		"glob": "~5.0.5",
+		"should": "~6.0.3",
+		"glob": "~5.0.10",
 		"svg2png": "^1.1.1",
-		"image-diff": "^1.0.1",
-		"mkdirp": "^0.5.0",
-		"gulp": "^3.8.11",
-		"gulp-jshint": "^1.10.0",
-		"gulp-plumber": "^1.0.0"
+		"image-diff": "^1.0.3",
+		"mkdirp": "^0.5.1",
+		"gulp": "^3.9.0",
+		"gulp-jshint": "^1.11.0",
+		"gulp-plumber": "^1.0.1"
 	},
 	"peerDependencies": {
 		"vinyl": "^0.4.6"
