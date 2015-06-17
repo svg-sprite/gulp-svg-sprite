@@ -1,4 +1,5 @@
-## 1.2.4 Maintenance release (unreleased)
+## 1.2.4 Maintenance release (2015-6-17)
+* Compatible with [svg-sprite 1.2.4](https://github.com/jkphl/svg-sprite/tree/v1.2.4)
 * Made vinyl a regular dependency in [preparation for npm@3](http://blog.npmjs.org/post/110924823920/npm-weekly-5) ([#25](https://github.com/jkphl/gulp-svg-sprite/issues/25))
 * Updated dependencies
 
