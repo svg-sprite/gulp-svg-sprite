@@ -1,3 +1,9 @@
+## 1.2.5 Maintenance release (2015-06-24)
+* Compatible with [svg-sprite 1.2.5](https://github.com/jkphl/svg-sprite/tree/v1.2.5)
+* Documentation changes ([#27](https://github.com/jkphl/gulp-svg-sprite/issues/27))
+* Updated dependencies
+* Changed sprite file name handling ([svg-sprite #97](https://github.com/jkphl/svg-sprite/issues/97))
+
 ## 1.2.4 Maintenance release (2015-6-17)
 * Compatible with [svg-sprite 1.2.4](https://github.com/jkphl/svg-sprite/tree/v1.2.4)
 * Made vinyl a regular dependency in [preparation for npm@3](http://blog.npmjs.org/post/110924823920/npm-weekly-5) ([#25](https://github.com/jkphl/gulp-svg-sprite/issues/25))
