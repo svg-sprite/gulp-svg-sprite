@@ -29,7 +29,7 @@ Then, add it to your `gulpfile.js`:
 var gulp				= require('gulp'),
 svgSprite				= require('gulp-svg-sprite');
 
-gulp.src('assets/*.svg')
+gulp.src('path/to/assets/*.svg')
 	.pipe(svgSprite( /* ... Insert your configuration here ... */ ))
 	.pipe(gulp.dest('out'));
 ```
@@ -74,7 +74,7 @@ config					= {
 	}
 };
 
-gulp.src('**/*.svg', {cwd: 'assets'})
+gulp.src('**/*.svg', {cwd: 'path/to/assets'})
 	.pipe(svgSprite(config))
 	.pipe(gulp.dest('out'));
 ```
@@ -129,7 +129,7 @@ config					= {
 	}
 };
 
-gulp.src('**/*.svg', {cwd: 'assets'})
+gulp.src('**/*.svg', {cwd: 'path/to/assets'})
 	.pipe(svgSprite(config))
 	.pipe(gulp.dest('out'));
 ```
@@ -171,7 +171,7 @@ config					= {
 	}
 };
 
-gulp.src('**/*.svg', {cwd: 'assets'})
+gulp.src('**/*.svg', {cwd: ''})
 	.pipe(plumber())
 	.pipe(svgSprite(config))
 		.on('error', function(error){
