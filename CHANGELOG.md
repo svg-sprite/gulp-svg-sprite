@@ -1,3 +1,8 @@
+## 1.2.6 Feature release (2015-07-17)
+* Compatible with [svg-sprite 1.2.6](https://github.com/jkphl/svg-sprite/tree/v1.2.6)
+* Updated dependencies
+* Added CSS class namespacing ([svg-sprite #42](https://github.com/jkphl/svg-sprite/issues/42))
+
 ## 1.2.5 Maintenance release (2015-06-24)
 * Compatible with [svg-sprite 1.2.5](https://github.com/jkphl/svg-sprite/tree/v1.2.5)
 * Documentation changes ([#27](https://github.com/jkphl/gulp-svg-sprite/issues/27))
