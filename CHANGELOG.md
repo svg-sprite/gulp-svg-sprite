@@ -1,3 +1,7 @@
+## 1.2.7 Maintenance release (2015-07-29)
+* Compatible with [svg-sprite 1.2.7](https://github.com/jkphl/svg-sprite/tree/v1.2.7)
+* Fixed error in symbol example template ([svg-sprite #99](https://github.com/jkphl/svg-sprite/pull/99))
+
 ## 1.2.6 Feature release (2015-07-17)
 * Compatible with [svg-sprite 1.2.6](https://github.com/jkphl/svg-sprite/tree/v1.2.6)
 * Updated dependencies
