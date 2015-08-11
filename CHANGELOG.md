@@ -1,6 +1,7 @@
-## 1.2.7 Maintenance release (2015-07-29)
-* Compatible with [svg-sprite 1.2.7](https://github.com/jkphl/svg-sprite/tree/v1.2.7)
-* Fixed error in symbol example template ([svg-sprite #99](https://github.com/jkphl/svg-sprite/pull/99))
+## 1.2.8 Feature release (2015-08-12)
+* Compatible with [svg-sprite 1.2.8](https://github.com/jkphl/svg-sprite/tree/v1.2.8)
+* Updated dependencies
+* Introduced CSS positioning values floating point precision ([svg-sprite #102](https://github.com/jkphl/svg-sprite/issues/102))
 
 ## 1.2.6 Feature release (2015-07-17)
 * Compatible with [svg-sprite 1.2.6](https://github.com/jkphl/svg-sprite/tree/v1.2.6)
