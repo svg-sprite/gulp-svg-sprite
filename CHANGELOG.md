@@ -1,3 +1,7 @@
+## 1.2.9 Bugfix release (2015-08-19)
+* Compatible with [svg-sprite 1.2.9](https://github.com/jkphl/svg-sprite/tree/v1.2.9)
+* Fixed broken `classname` rendering function ([svg-sprite #71](https://github.com/jkphl/svg-sprite/pull/71))
+
 ## 1.2.8 Feature release (2015-08-12)
 * Compatible with [svg-sprite 1.2.8](https://github.com/jkphl/svg-sprite/tree/v1.2.8)
 * Updated dependencies
