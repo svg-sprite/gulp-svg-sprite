@@ -1,3 +1,9 @@
+## 1.2.10 Maintenance release (2015-08-19)
+* Compatible with [svg-sprite 1.2.10](https://github.com/jkphl/svg-sprite/tree/v1.2.10)
+* Updated dependencies
+* Added browser compatibility hint ([svg-sprite #106](https://github.com/jkphl/svg-sprite/issues/106))
+* Added accessibility features to symbol sprites ([svg-sprite #107](https://github.com/jkphl/svg-sprite/issues/107))
+
 ## 1.2.9 Bugfix release (2015-08-19)
 * Compatible with [svg-sprite 1.2.9](https://github.com/jkphl/svg-sprite/tree/v1.2.9)
 * Fixed broken `classname` rendering function ([svg-sprite #71](https://github.com/jkphl/svg-sprite/pull/71))
@@ -119,8 +125,8 @@
 * Updated dependencies
 * Introduced `svg` getter in templating shape variables
 * Fixed logging error in SVGO optimization
-* Fixed missing XML namespaces in SVG stack 
-* Fixed cache busting errors with example HTML document 
+* Fixed missing XML namespaces in SVG stack
+* Fixed cache busting errors with example HTML document
 
 ## v1.0.8 Bugfix release
 * Compatible with [svg-sprite 1.0.8](https://github.com/jkphl/svg-sprite/tree/v1.0.8)
