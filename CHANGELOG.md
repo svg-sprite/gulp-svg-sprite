@@ -1,3 +1,7 @@
+## 1.2.11 Maintenance release (2015-10-07)
+* Compatible with [svg-sprite 1.2.11](https://github.com/jkphl/svg-sprite/tree/v1.2.11)
+* Updated dependencies
+
 ## 1.2.10 Maintenance release (2015-08-19)
 * Compatible with [svg-sprite 1.2.10](https://github.com/jkphl/svg-sprite/tree/v1.2.10)
 * Updated dependencies
