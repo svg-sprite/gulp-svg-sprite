@@ -1,3 +1,8 @@
+## 1.2.13 Maintenance release (2015-11-06)
+* Compatible with [svg-sprite 1.2.13](https://github.com/jkphl/svg-sprite/tree/v1.2.13)
+* Updated dependencies
+* Support for source files outside the cwd ([grunt-svg-sprite #62](https://github.com/jkphl/grunt-svg-sprite/issues/62))
+
 ## 1.2.12 Maintenance release (2015-10-24)
 * Compatible with [svg-sprite 1.2.12](https://github.com/jkphl/svg-sprite/tree/v1.2.12)
 * Updated dependencies
