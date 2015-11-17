@@ -1,3 +1,9 @@
+## 1.2.14 Bugfix release (2015-11-17)
+* Compatible with [svg-sprite 1.2.14](https://github.com/jkphl/svg-sprite/tree/v1.2.14)
+* Updated dependencies & test fixtures
+* Added Node.js versions 4 & 5 to Travis tests
+* Fixed broken svg4everybody links ([svg-sprite #122](https://github.com/jkphl/svg-sprite/issues/122), [#39](https://github.com/jkphl/gulp-svg-sprite/issues/39))
+
 ## 1.2.13 Maintenance release (2015-11-06)
 * Compatible with [svg-sprite 1.2.13](https://github.com/jkphl/svg-sprite/tree/v1.2.13)
 * Updated dependencies
