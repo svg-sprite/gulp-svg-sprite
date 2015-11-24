@@ -16,7 +16,7 @@
 		"node": ">= 0.10.0"
 	},
 	"scripts": {
-		"test": "gulp && istanbul test _mocha --report html -- test/*.js --reporter spec",
+		"test": "istanbul test _mocha --report html -- test/*.js --reporter spec",
 		"coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
 	},
 	"files": [
@@ -42,8 +42,7 @@
 		"mkdirp": "^0.5.1",
 		"gulp": "^3.9.0",
 		"gulp-jshint": "^2.0.0",
-		"gulp-plumber": "^1.0.1",
-		"jshint": "^2.9.1-rc1"
+		"gulp-plumber": "^1.0.1"
 	},
 	"keywords": [
 		"gulpplugin",
