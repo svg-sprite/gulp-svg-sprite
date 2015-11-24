@@ -1,6 +1,7 @@
 ## 1.2.15 Compatibility release (2015-11-24)
 * Compatible with [svg-sprite 1.2.15](https://github.com/jkphl/svg-sprite/tree/v1.2.15)
 * Updated dev dependencies
+* Temporarily disabled linting due to https://github.com/spalger/gulp-jshint/issues/131
 
 ## 1.2.14 Bugfix release (2015-11-17)
 * Compatible with [svg-sprite 1.2.14](https://github.com/jkphl/svg-sprite/tree/v1.2.14)
