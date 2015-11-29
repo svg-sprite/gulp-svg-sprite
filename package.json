@@ -1,69 +1,70 @@
 {
-	"name": "gulp-svg-sprite",
-	"description": "SVG sprites & stacks galore — Gulp plugin wrapping around svg-sprite that reads in a bunch of SVG files, optimizes them and creates SVG sprites and CSS resources in various flavours",
-	"version": "1.2.15",
-	"homepage": "https://github.com/jkphl/gulp-svg-sprite",
-	"author": "Joschi Kuphal <joschi@kuphal.net> (https://jkphl.is)",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/jkphl/gulp-svg-sprite.git"
-	},
-	"bugs": {
-		"url": "https://github.com/jkphl/gulp-svg-sprite/issues"
-	},
-	"license": "MIT",
-	"engines": {
-		"node": ">= 0.10.0"
-	},
-	"scripts": {
-		"test": "istanbul test _mocha --report html -- test/*.js --reporter spec",
-		"coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
-	},
-	"files": [
-		"index.js",
-		"CHANGELOG.md"
-	],
-	"dependencies": {
-		"svg-sprite": "~1.2.15",
-		"through2": "^2.0.0",
-		"gulp-util": "^3.0.7",
-		"vinyl": "^1.1.0"
-	},
-	"devDependencies": {
-		"mocha": "*",
-		"coveralls": "*",
-		"mocha-lcov-reporter": "*",
-		"istanbul": "*",
-		"event-stream": "*",
-		"should": "~7.1.1",
-		"glob": "~6.0.1",
-		"svg2png": "^2.0.0",
-		"image-diff": "^1.3.0",
-		"mkdirp": "^0.5.1",
-		"gulp": "^3.9.0",
-		"gulp-jshint": "^2.0.0",
-		"gulp-plumber": "^1.0.1"
-	},
-	"keywords": [
-		"gulpplugin",
-		"icon",
-		"icons",
-		"svg",
-		"png",
-		"sprite",
-		"spritesheet",
-		"stack",
-		"generator",
-		"css",
-		"sass",
-		"less",
-		"stylus",
-		"stylesheet",
-		"inline",
-		"html",
-		"vector",
-		"rwd",
-		"retina",
-		"mustache"
-	]
+  "name": "gulp-svg-sprite",
+  "description": "SVG sprites & stacks galore — Gulp plugin wrapping around svg-sprite that reads in a bunch of SVG files, optimizes them and creates SVG sprites and CSS resources in various flavours",
+  "version": "1.2.15",
+  "homepage": "https://github.com/jkphl/gulp-svg-sprite",
+  "author": "Joschi Kuphal <joschi@kuphal.net> (https://jkphl.is)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jkphl/gulp-svg-sprite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jkphl/gulp-svg-sprite/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "gulp && istanbul test _mocha --report html -- test/*.js --reporter spec",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+  },
+  "files": [
+    "index.js",
+    "CHANGELOG.md"
+  ],
+  "dependencies": {
+    "svg-sprite": "~1.2.15",
+    "through2": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "vinyl": "^1.1.0"
+  },
+  "devDependencies": {
+    "coveralls": "*",
+    "event-stream": "*",
+    "glob": "~6.0.1",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-plumber": "^1.0.1",
+    "image-diff": "^1.3.0",
+    "istanbul": "*",
+    "jshint": "^2.8.0",
+    "mkdirp": "^0.5.1",
+    "mocha": "*",
+    "mocha-lcov-reporter": "*",
+    "should": "~7.1.1",
+    "svg2png": "^2.0.0"
+  },
+  "keywords": [
+    "gulpplugin",
+    "icon",
+    "icons",
+    "svg",
+    "png",
+    "sprite",
+    "spritesheet",
+    "stack",
+    "generator",
+    "css",
+    "sass",
+    "less",
+    "stylus",
+    "stylesheet",
+    "inline",
+    "html",
+    "vector",
+    "rwd",
+    "retina",
+    "mustache"
+  ]
 }
