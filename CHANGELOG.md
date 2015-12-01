@@ -1,6 +1,9 @@
-## 1.2.16 Maintenance release (unreleased)
+## 1.2.16 Maintenance release (2015-12-01)
+* Compatible with [svg-sprite 1.2.16](https://github.com/jkphl/svg-sprite/tree/v1.2.16)
 * Updated dev dependencies
 * Re-enabled linting (see https://github.com/spalger/gulp-jshint/issues/131)
+* Improved log level config handling ([svg-sprite #124](https://github.com/jkphl/svg-sprite/issues/124))
+* Wrapped CSS url()s in quotes ([svg-sprite #125](https://github.com/jkphl/svg-sprite/issues/125))
 
 ## 1.2.15 Compatibility release (2015-11-24)
 * Compatible with [svg-sprite 1.2.15](https://github.com/jkphl/svg-sprite/tree/v1.2.15)
