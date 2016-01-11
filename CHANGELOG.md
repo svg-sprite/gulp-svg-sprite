@@ -1,3 +1,8 @@
+## 1.2.19 Maintenance release (2016-01-11)
+* Compatible with [svg-sprite 1.2.19](https://github.com/jkphl/svg-sprite/tree/v1.2.19)
+* Updated dependencies
+* Temporarily fixed xmldom dependency problem ([svg-sprite #135](https://github.com/jkphl/svg-sprite/issues/135))
+
 ## 1.2.18 Maintenance release (2016-01-05)
 * Compatible with [svg-sprite 1.2.18](https://github.com/jkphl/svg-sprite/tree/v1.2.18)
 * Updated dependencies
