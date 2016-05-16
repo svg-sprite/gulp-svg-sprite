@@ -1,7 +1,7 @@
 {
   "name": "gulp-svg-sprite",
   "description": "SVG sprites & stacks galore — Gulp plugin wrapping around svg-sprite that reads in a bunch of SVG files, optimizes them and creates SVG sprites and CSS resources in various flavours",
-  "version": "1.2.19",
+  "version": "1.3.0",
   "homepage": "https://github.com/jkphl/gulp-svg-sprite",
   "author": "Joschi Kuphal <joschi@kuphal.net> (https://jkphl.is)",
   "repository": {
@@ -13,7 +13,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 4.0"
   },
   "scripts": {
     "test": "gulp && istanbul test _mocha --report html -- test/*.js --reporter spec",
@@ -24,26 +24,27 @@
     "CHANGELOG.md"
   ],
   "dependencies": {
-    "svg-sprite": "~1.2.19",
-    "through2": "^2.0.0",
+    "svg-sprite": "~1.3.0",
+    "through2": "^2.0.1",
     "gulp-util": "^3.0.7",
-    "vinyl": "^1.1.0"
+    "vinyl": "^1.1.1"
   },
   "devDependencies": {
     "coveralls": "*",
     "event-stream": "*",
-    "glob": "~6.0.4",
-    "gulp": "^3.9.0",
-    "gulp-jshint": "^2.0.0",
-    "gulp-plumber": "^1.0.1",
-    "image-diff": "^1.3.0",
+    "glob": "~7.0.3",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-plumber": "^1.1.0",
+    "image-diff": "^1.5.1",
     "istanbul": "*",
-    "jshint": "^2.9.1-rc2",
+    "jshint": "^2.9.2",
     "mkdirp": "^0.5.1",
+    "pn": "^1.0.0",
     "mocha": "*",
     "mocha-lcov-reporter": "*",
-    "should": "~8.1.0",
-    "svg2png": "2.1.0"
+    "should": "~8.3.1",
+    "svg2png": "jkphl/svg2png"
   },
   "keywords": [
     "gulpplugin",

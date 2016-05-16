@@ -1,3 +1,13 @@
+## 1.3.0 Major maintenance release (unreleased)
+* Compatible with [svg-sprite 1.3.0](https://github.com/jkphl/svg-sprite/tree/v1.3.0)
+* Updated dependencies
+* Removed redundant require ([svg-sprite #156](https://github.com/jkphl/svg-sprite/issues/156))
+* Dropped support for Node.js < 4.0 and io.js
+* Added explicit sprite size in example document ([svg-sprite #138](https://github.com/jkphl/svg-sprite/issues/138))
+* Added XML entity resolution ([svg-sprite #118](https://github.com/jkphl/svg-sprite/issues/118))
+* Allow multiple selectors for ID / class namespacing ([svg-sprite #109](https://github.com/jkphl/svg-sprite/issues/109))
+* Switched to [patched svg2png](https://github.com/domenic/svg2png/pull/45) until media queries are properly supported (devDependencies)
+
 ## 1.2.19 Maintenance release (2016-01-11)
 * Compatible with [svg-sprite 1.2.19](https://github.com/jkphl/svg-sprite/tree/v1.2.19)
 * Updated dependencies
