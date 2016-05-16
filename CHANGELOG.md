@@ -1,4 +1,4 @@
-## 1.3.0 Major maintenance release (unreleased)
+## 1.3.0 Major maintenance release (2016-04-16)
 * Compatible with [svg-sprite 1.3.0](https://github.com/jkphl/svg-sprite/tree/v1.3.0)
 * Updated dependencies
 * Removed redundant require ([svg-sprite #156](https://github.com/jkphl/svg-sprite/issues/156))
