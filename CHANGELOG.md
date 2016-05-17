@@ -1,3 +1,8 @@
+## 1.3.1 Bugfix release (2015-12-17)
+* Compatible with [svg-sprite 1.3.1](https://github.com/jkphl/svg-sprite/tree/v1.3.1)
+* Fixed modeless run ([svg-sprite #158](https://github.com/jkphl/svg-sprite/issues/158), [#42](https://github.com/jkphl/gulp-svg-sprite/issues/42))
+* Fixed broken shape dimension attribute removal in symbol mode ([#51](https://github.com/jkphl/gulp-svg-sprite/issues/51))
+
 ## 1.3.0 Major maintenance release (2016-04-16)
 * Compatible with [svg-sprite 1.3.0](https://github.com/jkphl/svg-sprite/tree/v1.3.0)
 * Updated dependencies
