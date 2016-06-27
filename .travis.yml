@@ -5,12 +5,13 @@ language: node_js
 node_js:
   - '4.0'
   - '5.0'
+  - '6.0'
 
 after_script:
   - npm run coveralls
 
 after_failure:
   - tar -cjf "grunt-svg-sprite_travis_${TRAVIS_BUILD_NUMBER}.tar.bz2" tmp && curl --ftp-create-dirs -T "grunt-svg-sprite_travis_${TRAVIS_BUILD_NUMBER}.tar.bz2" -u $FTP_USER:$FTP_PASSWORD "ftp://jkphl.is/${TRAVIS_REPO_SLUG}/grunt-svg-sprite_travis_${TRAVIS_BUILD_NUMBER}.tar.bz2"
-  
+
 matrix:
   fast_finish: true
