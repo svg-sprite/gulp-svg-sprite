@@ -1,4 +1,4 @@
-# gulp-svg-sprite [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]  [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url] [![Development Dependency Status][devdepstat-image]][devdepstat-url]
+# gulp-svg-sprite [![NPM version][npm-image]][npm-url] [![NPM downloads][npm-downloads]][npm-url] [![Build Status][travis-image]][travis-url]  [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url] [![Development Dependency Status][devdepstat-image]][devdepstat-url]
 ===============
 
 is a Gulp plugin wrapping around [svg-sprite](https://github.com/jkphl/svg-sprite) which **takes a bunch of [SVG](http://www.w3.org/TR/SVG/) files**, optimizes them and bakes them into **SVG sprites** of several types:
@@ -206,6 +206,7 @@ Copyright © 2015 Joschi Kuphal <joschi@kuphal.net> / [@jkphl](https://twitter.c
 
 [npm-url]: https://npmjs.org/package/gulp-svg-sprite
 [npm-image]: https://badge.fury.io/js/gulp-svg-sprite.png
+[npm-downloads]: https://img.shields.io/npm/dm/gulp-svg-sprite.svg
 
 [travis-url]: http://travis-ci.org/jkphl/gulp-svg-sprite
 [travis-image]: https://secure.travis-ci.org/jkphl/gulp-svg-sprite.png
