@@ -7,7 +7,7 @@ is a Gulp plugin wrapping around [svg-sprite](https://github.com/jkphl/svg-sprit
 *	CSS sprites with **pre-defined `<view>` elements**, useful for foreground images as well,
 *	inline sprites using the **`<defs>` element**,
 *	inline sprites using the **`<symbol>` element**
-*	and [SVG stacks](http://simurai.com/blog/2012/04/02/svg-stacks/).
+*	and [SVG stacks](http://simurai.com/blog/2012/04/02/svg-stacks).
 
 
 ## Features & configuration? → [svg-sprite](https://github.com/jkphl/svg-sprite)
