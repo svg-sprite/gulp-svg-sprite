@@ -1,3 +1,8 @@
+## 1.3.4 Compatibility release (2016-08-12)
+* Compatible with [svg-sprite 1.3.4](https://github.com/jkphl/svg-sprite/tree/v1.3.4)
+* Updated dependencies
+* Extended the ID generator callback signature ([svg-sprite #176](https://github.com/jkphl/svg-sprite/issues/176))
+
 ## 1.3.3 Compatibility release (2016-06-28)
 * Compatible with [svg-sprite 1.3.3](https://github.com/jkphl/svg-sprite/tree/v1.3.3)
 
