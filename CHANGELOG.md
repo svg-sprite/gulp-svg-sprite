@@ -1,3 +1,8 @@
+## 1.3.5 Compatibility release (2016-08-15)
+* Compatible with [svg-sprite 1.3.5](https://github.com/jkphl/svg-sprite/tree/v1.3.5)
+* Updated dependencies
+* Fixed file name regression bug ([svg-sprite #186](https://github.com/jkphl/svg-sprite/issues/186))
+
 ## 1.3.4 Compatibility release (2016-08-12)
 * Compatible with [svg-sprite 1.3.4](https://github.com/jkphl/svg-sprite/tree/v1.3.4)
 * Updated dependencies
