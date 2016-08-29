@@ -1,3 +1,8 @@
+## 1.3.6 Bugfix release (2016-08-29)
+* Compatible with [svg-sprite 1.3.6](https://github.com/jkphl/svg-sprite/tree/v1.3.6)
+* Fixed LESS template mixin call ([svg-sprite #187](https://github.com/jkphl/svg-sprite/pull/187))
+* Fixed broken keyframe animation support ([#63](https://github.com/jkphl/gulp-svg-sprite/issues/63))
+
 ## 1.3.5 Compatibility release (2016-08-15)
 * Compatible with [svg-sprite 1.3.5](https://github.com/jkphl/svg-sprite/tree/v1.3.5)
 * Updated dependencies
