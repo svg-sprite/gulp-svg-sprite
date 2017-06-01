@@ -1,3 +1,7 @@
+## 1.3.7 Compatibility release (2017-06-01)
+* Compatible with [svg-sprite 1.3.7](https://github.com/jkphl/svg-sprite/tree/v1.3.7)
+* Updated dependencies
+
 ## 1.3.6 Bugfix release (2016-08-29)
 * Compatible with [svg-sprite 1.3.6](https://github.com/jkphl/svg-sprite/tree/v1.3.6)
 * Fixed LESS template mixin call ([svg-sprite #187](https://github.com/jkphl/svg-sprite/pull/187))
