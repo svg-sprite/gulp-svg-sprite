@@ -24,10 +24,9 @@
     "CHANGELOG.md"
   ],
   "dependencies": {
+    "plugin-error": "^0.1.2",
     "svg-sprite": "~1.3.7",
-    "through2": "^2.0.3",
-    "gulp-util": "^3.0.8",
-    "vinyl": "^2.0.2"
+    "through2": "^2.0.3"
   },
   "devDependencies": {
     "coveralls": "*",
@@ -40,11 +39,12 @@
     "istanbul": "*",
     "jshint": "^2.9.4",
     "mkdirp": "^0.5.1",
-    "pn": "^1.0.0",
     "mocha": "*",
     "mocha-lcov-reporter": "*",
+    "pn": "^1.0.0",
     "should": "~11.2.1",
-    "svg2png": "jkphl/svg2png"
+    "svg2png": "jkphl/svg2png",
+    "vinyl": "^2.1.0"
   },
   "keywords": [
     "gulpplugin",

@@ -25,7 +25,7 @@ require('mocha');
 
 delete require.cache[require.resolve('../')];
 
-var gutil = require('gulp-util'),
+var Vinyl = require('vinyl'),
     gulpSvgSprite = require('../'),
     orthogonal = {
 //		log					: 'debug',
@@ -157,7 +157,7 @@ describe('gulp-svg-sprite', function () {
             });
 
             glob.glob.sync('weather*.svg', {cwd: cwd}).forEach(function (file) {
-                stream.write(new gutil.File({
+                stream.write(new Vinyl({
                     path: path.join(cwd, file),
                     cwd: cwd,
                     base: cwd,
@@ -218,7 +218,7 @@ describe('gulp-svg-sprite', function () {
             });
 
             glob.glob.sync('weather*.svg', {cwd: cwd}).forEach(function (file) {
-                stream.write(new gutil.File({
+                stream.write(new Vinyl({
                     path: path.join(cwd, file),
                     cwd: cwd,
                     base: cwd,
