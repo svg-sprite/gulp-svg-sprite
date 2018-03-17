@@ -26,12 +26,12 @@ npm install --save-dev gulp-svg-sprite
 Then, add it to your `gulpfile.js`:
 
 ```javascript
-var gulp				= require('gulp'),
-svgSprite				= require('gulp-svg-sprite');
+var gulp = require('gulp'),
+  svgSprite = require('gulp-svg-sprite');
 
 gulp.src('path/to/assets/*.svg')
-	.pipe(svgSprite( /* ... Insert your configuration here ... */ ))
-	.pipe(gulp.dest('out'));
+  .pipe(svgSprite(/* ... Insert your configuration here ... */))
+  .pipe(gulp.dest('out'));
 ```
 
 **NOTICE**: By default, *svg-sprite* **doesn't send any files downstream** unless you configure it. There are tons of options available — please see below for [some basic examples](#basic-example). Also, you should possibly [take care of errors](#error-handling) that might occur.
@@ -60,23 +60,23 @@ With Gulp, there is no need to specifiy a **main output directory**, as the gene
 In this very basic example, mostly default settings will be applied to create a traditional CSS sprite (bundle of SVG sprite and CSS stylesheet).
 
 ```javascript
-var gulp				= require('gulp'),
-svgSprite				= require('gulp-svg-sprite'),
+var gulp = require('gulp'),
+  svgSprite = require('gulp-svg-sprite'),
+  
+  // Basic configuration example
+  config = {
+    mode: {
+      css: { // Activate the «css» mode
+        render: {
+          css: true // Activate CSS output (with default options)
+        }
+      }
+    }
+  };
 
-// Basic configuration example
-config					= {
-	mode				: {
-		css				: {		// Activate the «css» mode
-			render		: {
-				css		: true	// Activate CSS output (with default options)
-			}
-		}
-	}
-};
-
-gulp.src('**/*.svg', {cwd: 'path/to/assets'})
-	.pipe(svgSprite(config))
-	.pipe(gulp.dest('out'));
+gulp.src('**/*.svg', { cwd: 'path/to/assets' })
+  .pipe(svgSprite(config))
+  .pipe(gulp.dest('out'));
 ```
 
 The following files and directories are created:
@@ -103,35 +103,35 @@ The following example is a little more complex:
 * We'll keep the intermediate SVG source files.
 
 ```javascript
-var gulp				= require('gulp'),
-svgSprite				= require('gulp-svg-sprite'),
+var gulp = require('gulp'),
+  svgSprite = require('gulp-svg-sprite'),
+  
+  // More complex configuration example
+  config = {
+    shape: {
+      dimension: { // Set maximum dimensions
+        maxWidth: 32,
+        maxHeight: 32
+      },
+      spacing: { // Add padding
+        padding: 10
+      },
+      dest: 'out/intermediate-svg' // Keep the intermediate files
+    },
+    mode: {
+      view: { // Activate the «view» mode
+        bust: false,
+        render: {
+          scss: true // Activate Sass output (with default options)
+        }
+      },
+      symbol: true // Activate the «symbol» mode
+    }
+  };
 
-// More complex configuration example
-config					= {
-	shape				: {
-		dimension		: {			// Set maximum dimensions
-			maxWidth	: 32,
-			maxHeight	: 32
-		},
-		spacing			: {			// Add padding
-			padding		: 10
-		},
-		dest			: 'out/intermediate-svg'	// Keep the intermediate files
-	},
-	mode				: {
-		view			: {			// Activate the «view» mode
-			bust		: false,
-			render		: {
-				scss	: true		// Activate Sass output (with default options)
-			}
-		},
-		symbol			: true		// Activate the «symbol» mode
-	}
-};
-
-gulp.src('**/*.svg', {cwd: 'path/to/assets'})
-	.pipe(svgSprite(config))
-	.pipe(gulp.dest('out'));
+gulp.src('**/*.svg', { cwd: 'path/to/assets' })
+  .pipe(svgSprite(config))
+  .pipe(gulp.dest('out'));
 ```
 
 The following files and directories are created:
@@ -156,28 +156,28 @@ out
 Errors might always happen — maybe there are some corrupted source SVG files, the default [SVGO](https://github.com/svg/svgo) plugin configuration is too aggressive or there's just an error in *svg-sprite*'s code. To make your tasks more robust, you might consider using [plumber](https://github.com/floatdrop/gulp-plumber) and adding your custom error handling:
 
 ```javascript
-var gulp				= require('gulp'),
-svgSprite				= require('gulp-svg-sprite'),
-plumber					= require('gulp-plumber'),
+var gulp = require('gulp'),
+  svgSprite = require('gulp-svg-sprite'),
+  plumber = require('gulp-plumber'),
+  
+  // Basic configuration example
+  config = {
+    mode: {
+      css: {
+        render: {
+          css: true
+        }
+      }
+    }
+  };
 
-// Basic configuration example
-config					= {
-	mode				: {
-		css				: {
-			render		: {
-				css		: true
-			}
-		}
-	}
-};
-
-gulp.src('**/*.svg', {cwd: ''})
-	.pipe(plumber())
-	.pipe(svgSprite(config))
-		.on('error', function(error){
-			/* Do some awesome error handling ... */
-		})
-	.pipe(gulp.dest('out'));
+gulp.src('**/*.svg', { cwd: '' })
+  .pipe(plumber())
+  .pipe(svgSprite(config))
+  .on('error', function(error) {
+    /* Do some awesome error handling ... */
+  })
+  .pipe(gulp.dest('out'));
 ```
 
 
@@ -201,7 +201,7 @@ Please refer to the [changelog](CHANGELOG.md) for a complete release history.
 
 Legal
 -----
-Copyright © 2015 Joschi Kuphal <joschi@kuphal.net> / [@jkphl](https://twitter.com/jkphl). *svg-sprite* is licensed under the terms of the [MIT license](LICENSE.txt). The contained example SVG icons are part of the [Tango Icon Library](http://tango.freedesktop.org/Tango_Icon_Library) and belong to the Public Domain.
+Copyright © 2018 Joschi Kuphal <joschi@kuphal.net> / [@jkphl](https://twitter.com/jkphl). *svg-sprite* is licensed under the terms of the [MIT license](LICENSE.txt). The contained example SVG icons are part of the [Tango Icon Library](http://tango.freedesktop.org/Tango_Icon_Library) and belong to the Public Domain.
 
 
 [npm-url]: https://npmjs.org/package/gulp-svg-sprite
