@@ -9,7 +9,7 @@
  * @see https://github.com/jkphl/gulp-svg-sprite
  *
  * @author Joschi Kuphal <joschi@kuphal.net> (https://github.com/jkphl)
- * @copyright © 2014 Joschi Kuphal
+ * @copyright © 2018 Joschi Kuphal
  * @license MIT https://raw.github.com/jkphl/gulp-svg-sprite/master/LICENSE.txt
  */
 
