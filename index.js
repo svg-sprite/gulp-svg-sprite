@@ -11,9 +11,8 @@
  */
 
 var through2 						= require('through2'),
-	gutil							= require('gulp-util'),
+	PluginError						= require('plugin-error'),
 	SVGSpriter						= require('svg-sprite'),
-	PluginError						= gutil.PluginError,
 
 	PLUGIN_NAME						= 'gulp-svg-sprite';
 
