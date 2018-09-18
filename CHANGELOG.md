@@ -1,3 +1,7 @@
+## 1.5.0 Compatibility release (2018-09-18)
+* Updated dependencies
+* Dropped support for Node.js < 6.4
+
 ## 1.4.1 Compatibility release (2018-09-18)
 * Updated dependencies
 
