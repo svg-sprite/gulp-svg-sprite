@@ -36,6 +36,7 @@ gulp.src('path/to/assets/*.svg')
 
 **NOTICE**: By default, *svg-sprite* **doesn't send any files downstream** unless you configure it. There are tons of options available — please see below for [some basic examples](#basic-example). Also, you should possibly [take care of errors](#error-handling) that might occur.
 
+
 ## API
 
 
