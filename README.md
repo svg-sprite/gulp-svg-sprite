@@ -36,7 +36,6 @@ gulp.src('path/to/assets/*.svg')
 
 **NOTICE**: By default, *svg-sprite* **doesn't send any files downstream** unless you configure it. There are tons of options available — please see below for [some basic examples](#basic-example). Also, you should possibly [take care of errors](#error-handling) that might occur.
 
-
 ## API
 
 
@@ -91,6 +90,45 @@ out
 
 > The cryptical looking part in the SVG's file name is the result of *svg-sprite*'s cache busting feature which is enabled by default for CSS sprites. We'll turn this off in the next example.
 
+#### Gulp 4 basic example
+
+In this very basic example, mostly default settings will be applied to create a traditional CSS sprite (bundle of SVG sprite and CSS stylesheet).
+
+```javascript
+const {src, dest, parallel} = require('gulp');
+const svgSprite = require('gulp-svg-sprite');
+
+// Basic configuration example
+const svgSprintConfig = {
+  mode: {
+    css: { // Activate the «css» mode
+      render: {
+        css: true // Activate CSS output (with default options)
+      }
+    }
+  }
+};
+
+function buildSvg() {
+  return src('**/*.svg', {cwd: 'src/assets'})
+    .pipe(svgSprite(svgSprintConfig))
+    .pipe(dest('out'));
+}
+
+exports.default = parallel(buildSvg);
+```
+
+The following files and directories are created:
+
+```
+out
+`-- css
+    |-- sprite.css
+    `-- svg
+        `-- sprite.css-495d2010.svg
+```
+
+> The cryptical looking part in the SVG's file name is the result of *svg-sprite*'s cache busting feature which is enabled by default for CSS sprites. We'll turn this off in the next example.
 
 ### More complex example
 
