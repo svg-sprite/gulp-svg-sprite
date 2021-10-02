@@ -3,11 +3,11 @@
 
 is a Gulp plugin wrapping around [svg-sprite](https://github.com/jkphl/svg-sprite) which **takes a bunch of [SVG](http://www.w3.org/TR/SVG/) files**, optimizes them and bakes them into **SVG sprites** of several types:
 
-*	Traditional [CSS sprites](http://en.wikipedia.org/wiki/Sprite_(computer_graphics)#Sprites_by_CSS) for use as background images,
-*	CSS sprites with **pre-defined `<view>` elements**, useful for foreground images as well,
-*	inline sprites using the **`<defs>` element**,
-*	inline sprites using the **`<symbol>` element**
-*	and [SVG stacks](http://simurai.com/blog/2012/04/02/svg-stacks).
+* Traditional [CSS sprites](http://en.wikipedia.org/wiki/Sprite_(computer_graphics)#Sprites_by_CSS) for use as background images,
+* CSS sprites with **pre-defined `<view>` elements**, useful for foreground images as well,
+* inline sprites using the **`<defs>` element**,
+* inline sprites using the **`<symbol>` element**
+* and [SVG stacks](http://simurai.com/blog/2012/04/02/svg-stacks).
 
 
 ## Features & configuration? → [svg-sprite](https://github.com/jkphl/svg-sprite)
@@ -62,7 +62,7 @@ In this very basic example, mostly default settings will be applied to create a 
 ```javascript
 var gulp = require('gulp'),
   svgSprite = require('gulp-svg-sprite'),
-  
+
   // Basic configuration example
   config = {
     mode: {
@@ -144,7 +144,7 @@ The following example is a little more complex:
 ```javascript
 var gulp = require('gulp'),
   svgSprite = require('gulp-svg-sprite'),
-  
+
   // More complex configuration example
   config = {
     shape: {
@@ -198,7 +198,7 @@ Errors might always happen — maybe there are some corrupted source SVG files, 
 var gulp = require('gulp'),
   svgSprite = require('gulp-svg-sprite'),
   plumber = require('gulp-plumber'),
-  
+
   // Basic configuration example
   config = {
     mode: {
@@ -224,10 +224,10 @@ gulp.src('**/*.svg', { cwd: '' })
 
 For more advanced features like
 
-*	[custom transformation](https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md#svg-transformations),
-*	[meta data injection](https://github.com/jkphl/svg-sprite/blob/master/docs/meta-data.md),
-*	[customizing output templates](https://github.com/jkphl/svg-sprite/blob/master/docs/templating.md) or
-*	introducing new output formats
+* [custom transformation](https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md#svg-transformations),
+* [meta data injection](https://github.com/jkphl/svg-sprite/blob/master/docs/meta-data.md),
+* [customizing output templates](https://github.com/jkphl/svg-sprite/blob/master/docs/templating.md) or
+* introducing new output formats
 
 please refer to the [svg-sprite manual](https://github.com/jkphl/svg-sprite).
 
