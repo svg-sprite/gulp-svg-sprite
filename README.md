@@ -3,11 +3,11 @@
 
 is a Gulp plugin wrapping around [svg-sprite](https://github.com/jkphl/svg-sprite) which **takes a bunch of [SVG](http://www.w3.org/TR/SVG/) files**, optimizes them and bakes them into **SVG sprites** of several types:
 
-*	Traditional [CSS sprites](http://en.wikipedia.org/wiki/Sprite_(computer_graphics)#Sprites_by_CSS) for use as background images,
-*	CSS sprites with **pre-defined `<view>` elements**, useful for foreground images as well,
-*	inline sprites using the **`<defs>` element**,
-*	inline sprites using the **`<symbol>` element**
-*	and [SVG stacks](http://simurai.com/blog/2012/04/02/svg-stacks).
+* Traditional [CSS sprites](http://en.wikipedia.org/wiki/Sprite_(computer_graphics)#Sprites_by_CSS) for use as background images,
+* CSS sprites with **pre-defined `<view>` elements**, useful for foreground images as well,
+* inline sprites using the **`<defs>` element**,
+* inline sprites using the **`<symbol>` element**
+* and [SVG stacks](http://simurai.com/blog/2012/04/02/svg-stacks).
 
 
 ## Features & configuration? → [svg-sprite](https://github.com/jkphl/svg-sprite)
@@ -62,7 +62,7 @@ In this very basic example, mostly default settings will be applied to create a 
 ```javascript
 var gulp = require('gulp'),
   svgSprite = require('gulp-svg-sprite'),
-  
+
   // Basic configuration example
   config = {
     mode: {
@@ -91,6 +91,45 @@ out
 
 > The cryptical looking part in the SVG's file name is the result of *svg-sprite*'s cache busting feature which is enabled by default for CSS sprites. We'll turn this off in the next example.
 
+#### Gulp 4 basic example
+
+In this very basic example, mostly default settings will be applied to create a traditional CSS sprite (bundle of SVG sprite and CSS stylesheet).
+
+```javascript
+const {src, dest, parallel} = require('gulp');
+const svgSprite = require('gulp-svg-sprite');
+
+// Basic configuration example
+const svgSprintConfig = {
+  mode: {
+    css: { // Activate the «css» mode
+      render: {
+        css: true // Activate CSS output (with default options)
+      }
+    }
+  }
+};
+
+function buildSvg() {
+  return src('**/*.svg', {cwd: 'src/assets'})
+    .pipe(svgSprite(svgSprintConfig))
+    .pipe(dest('out'));
+}
+
+exports.default = parallel(buildSvg);
+```
+
+The following files and directories are created:
+
+```
+out
+`-- css
+    |-- sprite.css
+    `-- svg
+        `-- sprite.css-495d2010.svg
+```
+
+> The cryptical looking part in the SVG's file name is the result of *svg-sprite*'s cache busting feature which is enabled by default for CSS sprites. We'll turn this off in the next example.
 
 ### More complex example
 
@@ -105,7 +144,7 @@ The following example is a little more complex:
 ```javascript
 var gulp = require('gulp'),
   svgSprite = require('gulp-svg-sprite'),
-  
+
   // More complex configuration example
   config = {
     shape: {
@@ -159,7 +198,7 @@ Errors might always happen — maybe there are some corrupted source SVG files, 
 var gulp = require('gulp'),
   svgSprite = require('gulp-svg-sprite'),
   plumber = require('gulp-plumber'),
-  
+
   // Basic configuration example
   config = {
     mode: {
@@ -185,10 +224,10 @@ gulp.src('**/*.svg', { cwd: '' })
 
 For more advanced features like
 
-*	[custom transformation](https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md#svg-transformations),
-*	[meta data injection](https://github.com/jkphl/svg-sprite/blob/master/docs/meta-data.md),
-*	[customizing output templates](https://github.com/jkphl/svg-sprite/blob/master/docs/templating.md) or
-*	introducing new output formats
+* [custom transformation](https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md#svg-transformations),
+* [meta data injection](https://github.com/jkphl/svg-sprite/blob/master/docs/meta-data.md),
+* [customizing output templates](https://github.com/jkphl/svg-sprite/blob/master/docs/templating.md) or
+* introducing new output formats
 
 please refer to the [svg-sprite manual](https://github.com/jkphl/svg-sprite).
 
