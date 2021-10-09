@@ -2,8 +2,8 @@
 /.settings
 /.buildpath
 /.idea
-/node_modules
+/node_modules/
 /npm-debug.log
-/tmp
+/tmp/
 *.md.html
 **/*.md.html

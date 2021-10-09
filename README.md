@@ -1,18 +1,19 @@
-# gulp-svg-sprite [![NPM version][npm-image]][npm-url] [![NPM downloads][npm-downloads]][npm-url] [![Build Status][travis-image]][travis-url]  [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url] [![Development Dependency Status][devdepstat-image]][devdepstat-url]
-===============
+# gulp-svg-sprite
 
-is a Gulp plugin wrapping around [svg-sprite](https://github.com/jkphl/svg-sprite) which **takes a bunch of [SVG](http://www.w3.org/TR/SVG/) files**, optimizes them and bakes them into **SVG sprites** of several types:
+[![npm version][npm-image]][npm-url] [![npm downloads][npm-downloads]][npm-url] [![Build Status][ci-image]][ci-url] [![Dependency Status][depstat-image]][depstat-url] [![Development Dependency Status][devdepstat-image]][devdepstat-url]
 
-* Traditional [CSS sprites](http://en.wikipedia.org/wiki/Sprite_(computer_graphics)#Sprites_by_CSS) for use as background images,
+is a Gulp plugin wrapping around [svg-sprite](https://github.com/svg-sprite/svg-sprite) which **takes a bunch of [SVG](https://www.w3.org/TR/SVG/) files**, optimizes them and bakes them into **SVG sprites** of several types:
+
+* Traditional [CSS sprites](https://en.wikipedia.org/wiki/Sprite_(computer_graphics)#Sprites_by_CSS) for use as background images,
 * CSS sprites with **pre-defined `<view>` elements**, useful for foreground images as well,
 * inline sprites using the **`<defs>` element**,
 * inline sprites using the **`<symbol>` element**
-* and [SVG stacks](http://simurai.com/blog/2012/04/02/svg-stacks).
+* and [SVG stacks](https://simurai.com/blog/2012/04/02/svg-stacks).
 
 
-## Features & configuration? → [svg-sprite](https://github.com/jkphl/svg-sprite)
+## Features & configuration? → [svg-sprite](https://github.com/svg-sprite/svg-sprite)
 
-This document covers only gulp specific installation and configuration aspects. For a full list of features and options, please see the [svg-sprite manual](https://github.com/jkphl/svg-sprite).
+This document covers only gulp specific installation and configuration aspects. For a full list of features and options, please see the [svg-sprite manual](https://github.com/svg-sprite/svg-sprite).
 
 
 ## Usage
@@ -25,9 +26,9 @@ npm install --save-dev gulp-svg-sprite
 
 Then, add it to your `gulpfile.js`:
 
-```javascript
-var gulp = require('gulp'),
-  svgSprite = require('gulp-svg-sprite');
+```js
+const gulp = require('gulp');
+const svgSprite = require('gulp-svg-sprite');
 
 gulp.src('path/to/assets/*.svg')
   .pipe(svgSprite(/* ... Insert your configuration here ... */))
@@ -42,7 +43,7 @@ gulp.src('path/to/assets/*.svg')
 
 ### svgSprite(options)
 
-As `options` argument you may provide a [main configuration object](https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md) as described in the *svg-sprite* manual. Configuration-wise, *svg-sprite* and *gulp-svg-sprite* differ only in one respect:
+As `options` argument you may provide a [main configuration object](https://github.com/svg-sprite/svg-sprite/blob/main/docs/configuration.md) as described in the *svg-sprite* manual. Configuration-wise, *svg-sprite* and *gulp-svg-sprite* differ only in one respect:
 
 #### ~~options.dest~~
 
@@ -59,20 +60,19 @@ With Gulp, there is no need to specifiy a **main output directory**, as the gene
 
 In this very basic example, mostly default settings will be applied to create a traditional CSS sprite (bundle of SVG sprite and CSS stylesheet).
 
-```javascript
-var gulp = require('gulp'),
-  svgSprite = require('gulp-svg-sprite'),
-
-  // Basic configuration example
-  config = {
-    mode: {
-      css: { // Activate the «css» mode
-        render: {
-          css: true // Activate CSS output (with default options)
-        }
+```js
+const gulp = require('gulp');
+const svgSprite = require('gulp-svg-sprite');
+// Basic configuration example
+const config = {
+  mode: {
+    css: { // Activate the «css» mode
+      render: {
+        css: true // Activate CSS output (with default options)
       }
     }
-  };
+  }
+};
 
 gulp.src('**/*.svg', { cwd: 'path/to/assets' })
   .pipe(svgSprite(config))
@@ -95,12 +95,12 @@ out
 
 In this very basic example, mostly default settings will be applied to create a traditional CSS sprite (bundle of SVG sprite and CSS stylesheet).
 
-```javascript
-const {src, dest, parallel} = require('gulp');
+```js
+const { src, dest, parallel } = require('gulp');
 const svgSprite = require('gulp-svg-sprite');
 
 // Basic configuration example
-const svgSprintConfig = {
+const svgspriteConfig = {
   mode: {
     css: { // Activate the «css» mode
       render: {
@@ -111,8 +111,8 @@ const svgSprintConfig = {
 };
 
 function buildSvg() {
-  return src('**/*.svg', {cwd: 'src/assets'})
-    .pipe(svgSprite(svgSprintConfig))
+  return src('**/*.svg', { cwd: 'src/assets' })
+    .pipe(svgSprite(svgspriteConfig))
     .pipe(dest('out'));
 }
 
@@ -141,32 +141,31 @@ The following example is a little more complex:
 * We'll **downscale the SVG shapes** to 32×32 pixels if necessary and **add 10 pixels padding** to all sides.
 * We'll keep the intermediate SVG source files.
 
-```javascript
-var gulp = require('gulp'),
-  svgSprite = require('gulp-svg-sprite'),
-
-  // More complex configuration example
-  config = {
-    shape: {
-      dimension: { // Set maximum dimensions
-        maxWidth: 32,
-        maxHeight: 32
-      },
-      spacing: { // Add padding
-        padding: 10
-      },
-      dest: 'out/intermediate-svg' // Keep the intermediate files
+```js
+const gulp = require('gulp');
+const svgSprite = require('gulp-svg-sprite');
+// More complex configuration example
+const config = {
+  shape: {
+    dimension: { // Set maximum dimensions
+      maxWidth: 32,
+      maxHeight: 32
     },
-    mode: {
-      view: { // Activate the «view» mode
-        bust: false,
-        render: {
-          scss: true // Activate Sass output (with default options)
-        }
-      },
-      symbol: true // Activate the «symbol» mode
-    }
-  };
+    spacing: { // Add padding
+      padding: 10
+    },
+    dest: 'out/intermediate-svg' // Keep the intermediate files
+  },
+  mode: {
+    view: { // Activate the «view» mode
+      bust: false,
+      render: {
+        scss: true // Activate Sass output (with default options)
+      }
+    },
+    symbol: true // Activate the «symbol» mode
+  }
+};
 
 gulp.src('**/*.svg', { cwd: 'path/to/assets' })
   .pipe(svgSprite(config))
@@ -194,21 +193,21 @@ out
 
 Errors might always happen — maybe there are some corrupted source SVG files, the default [SVGO](https://github.com/svg/svgo) plugin configuration is too aggressive or there's just an error in *svg-sprite*'s code. To make your tasks more robust, you might consider using [plumber](https://github.com/floatdrop/gulp-plumber) and adding your custom error handling:
 
-```javascript
-var gulp = require('gulp'),
-  svgSprite = require('gulp-svg-sprite'),
-  plumber = require('gulp-plumber'),
+```js
+const gulp = require('gulp');
+const svgSprite = require('gulp-svg-sprite');
+const plumber = require('gulp-plumber');
 
-  // Basic configuration example
-  config = {
-    mode: {
-      css: {
-        render: {
-          css: true
-        }
+// Basic configuration example
+const config = {
+  mode: {
+    css: {
+      render: {
+        css: true
       }
     }
-  };
+  }
+};
 
 gulp.src('**/*.svg', { cwd: '' })
   .pipe(plumber())
@@ -224,36 +223,32 @@ gulp.src('**/*.svg', { cwd: '' })
 
 For more advanced features like
 
-* [custom transformation](https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md#svg-transformations),
-* [meta data injection](https://github.com/jkphl/svg-sprite/blob/master/docs/meta-data.md),
-* [customizing output templates](https://github.com/jkphl/svg-sprite/blob/master/docs/templating.md) or
+* [custom transformation](https://github.com/svg-sprite/svg-sprite/blob/main/docs/configuration.md#svg-transformations),
+* [meta data injection](https://github.com/svg-sprite/svg-sprite/blob/main/docs/meta-data.md),
+* [customizing output templates](https://github.com/svg-sprite/svg-sprite/blob/main/docs/templating.md) or
 * introducing new output formats
 
-please refer to the [svg-sprite manual](https://github.com/jkphl/svg-sprite).
+please refer to the [svg-sprite manual](https://github.com/svg-sprite/svg-sprite).
 
 
-Changelog
----------
+## Changelog
 
 Please refer to the [changelog](CHANGELOG.md) for a complete release history.
 
 
-Legal
------
-Copyright © 2018 Joschi Kuphal <joschi@kuphal.net> / [@jkphl](https://twitter.com/jkphl). *svg-sprite* is licensed under the terms of the [MIT license](LICENSE.txt). The contained example SVG icons are part of the [Tango Icon Library](http://tango.freedesktop.org/Tango_Icon_Library) and belong to the Public Domain.
+## Legal
+
+Copyright © 2018 Joschi Kuphal <joschi@kuphal.net> / [@jkphl](https://twitter.com/jkphl). *svg-sprite* is licensed under the terms of the [MIT license](LICENSE). The contained example SVG icons are part of the [Tango Icon Library](http://tango.freedesktop.org/Tango_Icon_Library) and belong to the Public Domain.
 
 
 [npm-url]: https://npmjs.org/package/gulp-svg-sprite
-[npm-image]: https://badge.fury.io/js/gulp-svg-sprite.png
+[npm-image]: https://img.shields.io/npm/v/gulp-svg-sprite
 [npm-downloads]: https://img.shields.io/npm/dm/gulp-svg-sprite.svg
 
-[travis-url]: http://travis-ci.org/jkphl/gulp-svg-sprite
-[travis-image]: https://secure.travis-ci.org/jkphl/gulp-svg-sprite.png
+[ci-url]: https://github.com/svg-sprite/gulp-svg-sprite/actions?query=workflow%3ATests+branch%3Amain
+[ci-image]: https://img.shields.io/github/workflow/status/svg-sprite/gulp-svg-sprite/Tests/main
 
-[coveralls-url]: https://coveralls.io/r/jkphl/gulp-svg-sprite
-[coveralls-image]: https://img.shields.io/coveralls/jkphl/gulp-svg-sprite.svg
-
-[depstat-url]: https://david-dm.org/jkphl/gulp-svg-sprite
-[depstat-image]: https://david-dm.org/jkphl/gulp-svg-sprite.svg
-[devdepstat-url]: https://david-dm.org/jkphl/gulp-svg-sprite#info=devDependencies
-[devdepstat-image]: https://david-dm.org/jkphl/gulp-svg-sprite/dev-status.svg
+[depstat-url]: https://david-dm.org/svg-sprite/gulp-svg-sprite
+[depstat-image]: https://img.shields.io/david/svg-sprite/gulp-svg-sprite
+[devdepstat-url]: https://david-dm.org/svg-sprite/gulp-svg-sprite?type=dev
+[devdepstat-image]: https://img.shields.io/david/dev/svg-sprite/gulp-svg-sprite

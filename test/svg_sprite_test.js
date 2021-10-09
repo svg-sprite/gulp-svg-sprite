@@ -1,8 +1,5 @@
 'use strict';
 
-/*jshint expr: true*/
-/*global describe, it */
-
 /**
  * gulp-svg-sprite is a Gulp plugin for creating SVG sprites
  *
@@ -10,86 +7,81 @@
  *
  * @author Joschi Kuphal <joschi@kuphal.net> (https://github.com/jkphl)
  * @copyright © 2018 Joschi Kuphal
- * @license MIT https://raw.github.com/jkphl/gulp-svg-sprite/master/LICENSE.txt
+ * @license MIT https://github.com/svg-sprite/gulp-svg-sprite/blob/main/LICENSE
  */
 
-var fs = require('pn/fs'); // https://www.npmjs.com/package/pn
-var svg2png = require('svg2png');
-var path = require('path');
-var imageDiff = require('image-diff');
-var mkdirp = require('mkdirp');
-var should = require('should');
-var glob = require('glob');
+const assert = require('assert').strict;
+const fs = require('fs');
+const path = require('path');
+const svg2png = require('svg2png');
+const looksSame = require('looks-same');
+const glob = require('glob');
+const Vinyl = require('vinyl');
+const gulpSvgSprite = require('../index.js');
 
-require('mocha');
-
-delete require.cache[require.resolve('../')];
-
-var Vinyl = require('vinyl'),
-    gulpSvgSprite = require('../'),
-    orthogonal = {
-//		log					: 'debug',
-        mode: {
-            css: {
-                layout: 'vertical',
-                sprite: '../svg/vertical.svg',
-                render: {
-                    css: true,
-                    scss: true,
-                    less: true,
-                    styl: true
-                },
-                bust: false
+const orthogonal = {
+    //log: 'debug',
+    mode: {
+        css: {
+            layout: 'vertical',
+            sprite: '../svg/vertical.svg',
+            render: {
+                css: true,
+                scss: true,
+                less: true,
+                styl: true
             },
-            view: {
-                layout: 'horizontal',
-                sprite: '../svg/horizontal.svg',
-                bust: false
-            },
-            defs: {
-                sprite: '../svg/defs.svg'
-            },
-            symbol: {
-                sprite: '../svg/symbol.svg'
-            },
-            stack: {
-                sprite: '../svg/stack.svg'
-            }
-        }
-    },
-    others = {
-        shape: {
-            dest: 'intermediate'
+            bust: false
         },
-        mode: {
-            css: {
-                layout: 'diagonal',
-                sprite: '../svg/diagonal.svg',
-                bust: false
-            },
-            view: {
-                layout: 'packed',
-                sprite: '../svg/packed.svg',
-                bust: false
-            }
+        view: {
+            layout: 'horizontal',
+            sprite: '../svg/horizontal.svg',
+            bust: false
+        },
+        defs: {
+            sprite: '../svg/defs.svg'
+        },
+        symbol: {
+            sprite: '../svg/symbol.svg'
+        },
+        stack: {
+            sprite: '../svg/stack.svg'
         }
+    }
+};
+const others = {
+    shape: {
+        dest: 'intermediate'
     },
-    cwd = path.join(__dirname, 'fixtures'),
-    dest = path.normalize(path.join(__dirname, '..', 'tmp'));
+    mode: {
+        css: {
+            layout: 'diagonal',
+            sprite: '../svg/diagonal.svg',
+            bust: false
+        },
+        view: {
+            layout: 'packed',
+            sprite: '../svg/packed.svg',
+            bust: false
+        }
+    }
+};
+const cwd = path.join(__dirname, 'fixtures');
+const dest = path.normalize(path.join(__dirname, '../tmp'));
 
 /**
  * Prepare and output a file and create directories as necessary
  *
- * @param {String} file                File
- * @param {String} content            Content
- * @return {String}                    File
+ * @param {String} file             File
+ * @param {String} content          Content
+ * @return {String}                 File
  */
 function writeFile(file, content) {
     try {
-        mkdirp.sync(path.dirname(file));
+        fs.mkdirSync(path.dirname(file), { recursive: true });
         fs.writeFileSync(file, content);
         return file;
-    } catch (e) {
+    } catch {
         return null;
     }
 }
@@ -99,155 +91,152 @@ function writeFile(file, content) {
  *
  * @param {String} svg                SVG file path
  * @param {String} png                PNG file path
- * @param {String} expected            Expected PNG file path
- * @param {String} diff                Diff file path
- * @param {Function} done            Callback
- * @param {String} msg              Message
+ * @param {String} expected           Expected PNG file path
+ * @param {String} diff               Diff file path
+ * @param {Function} done             Callback
+ * @param {String} msg                Message
  */
+// eslint-disable-next-line max-params
 function compareSvg2Png(svg, png, expected, diff, done, msg) {
-    mkdirp.sync(path.dirname(png));
-    var ecb = function (err) {
+    fs.mkdirSync(path.dirname(png), { recursive: true });
+
+    const ecb = function(err) {
         console.log(err);
-        should(err).not.ok;
+        assert.ifError(err);
         done();
     };
-    fs.readFile(svg)
+
+    fs.promises.readFile(svg)
         .then(svg2png)
-        .then(function (buffer) {
-            fs.writeFile(png, buffer)
-                .then(function () {
-                    imageDiff({
-                        actualImage: png,
-                        expectedImage: expected,
-                        diffImage: diff
-                    }, function (err, imagesAreSame) {
-                        should(err).not.ok;
-                        should.ok(imagesAreSame, msg);
+        .then(buffer => {
+            fs.promises.writeFile(png, buffer)
+                .then(() => {
+                    looksSame(png, expected, (err, result) => {
+                        assert.ifError(err);
+                        assert.ok(result.equal, `${msg} ${JSON.stringify(result.diffClusters)} ${png}`);
                         done();
                     });
+                    looksSame.createDiff({
+                        reference: expected,
+                        current: png,
+                        diff,
+                        highlightColor: '#ff00ff'
+                    }, () => {});
                 })
                 .catch(ecb);
         })
         .catch(ecb);
 }
 
-describe('gulp-svg-sprite', function () {
-    describe('with orthogonal configuration', function () {
-        var stream = gulpSvgSprite(orthogonal),
-            result = 0;
+describe('gulp-svg-sprite', () => {
+    describe('with orthogonal configuration', () => {
+        const stream = gulpSvgSprite(orthogonal);
+        let result = 0;
 
-        it('should produce 9 files', function (done) {
-            this.timeout(20000);
-
-            stream.on('error', function (err) {
-                should.exist(err);
+        it('should produce 9 files', done => {
+            stream.on('error', err => {
+                assert.notEqual(err, undefined);
                 done(err);
             });
 
-            stream.on('data', function (file) {
-                should.exist(file);
-                should.exist(file.contents);
+            stream.on('data', file => {
+                assert.notEqual(file, undefined);
+                assert.notEqual(file.contents, undefined);
                 writeFile(path.join(dest, file.relative), file.contents);
                 ++result;
             });
 
-            stream.on('end', function () {
-                result.should.be.exactly(9);
+            stream.on('end', () => {
+                assert.equal(result, 9);
                 done();
             });
 
-            glob.glob.sync('weather*.svg', {cwd: cwd}).forEach(function (file) {
+            for (const file of glob.sync('weather*.svg', { cwd })) {
                 stream.write(new Vinyl({
                     path: path.join(cwd, file),
-                    cwd: cwd,
+                    cwd,
                     base: cwd,
                     contents: fs.readFileSync(path.join(cwd, file))
                 }));
-            });
+            }
 
             stream.end();
         });
 
-        it('should match vertical sprite', function (done) {
-            this.timeout(20000);
+        it('should match vertical sprite', done => {
             compareSvg2Png(
-                path.join(__dirname, '..', 'tmp', 'svg', 'vertical.svg'),
-                path.join(__dirname, '..', 'tmp', 'png', 'vertical.png'),
-                path.join(__dirname, 'expected', 'vertical.png'),
-                path.join(__dirname, '..', 'tmp', 'diff', 'vertical.png'),
+                path.join(__dirname, '../tmp/svg/vertical.svg'),
+                path.join(__dirname, '../tmp/png/vertical.png'),
+                path.join(__dirname, 'expected/vertical.png'),
+                path.join(__dirname, '../tmp/png/vertical.diff.png'),
                 done,
                 'The vertical sprite doesn\'t match the expected one!'
             );
         });
 
-        it('should match horizontal sprite', function (done) {
-            this.timeout(20000);
+        it('should match horizontal sprite', done => {
             compareSvg2Png(
-                path.join(__dirname, '..', 'tmp', 'svg', 'horizontal.svg'),
-                path.join(__dirname, '..', 'tmp', 'png', 'horizontal.png'),
-                path.join(__dirname, 'expected', 'horizontal.png'),
-                path.join(__dirname, '..', 'tmp', 'diff', 'horizontal.png'),
+                path.join(__dirname, '../tmp/svg/horizontal.svg'),
+                path.join(__dirname, '../tmp/png/horizontal.png'),
+                path.join(__dirname, 'expected/horizontal.png'),
+                path.join(__dirname, '../tmp/png/horizontal.diff.png'),
                 done,
                 'The horizontal sprite doesn\'t match the expected one!'
             );
         });
     });
 
-    describe('with alternative configuration', function () {
-        var stream = gulpSvgSprite(others),
-            result = 0;
+    describe('with alternative configuration', () => {
+        const stream = gulpSvgSprite(others);
+        let result = 0;
 
-        it('should produce 13 files', function (done) {
-            this.timeout(20000);
-
-            stream.on('error', function (err) {
-                should.exist(err);
+        it('should produce 13 files', done => {
+            stream.on('error', err => {
+                assert.notEqual(err, undefined);
                 done(err);
             });
 
-            stream.on('data', function (file) {
-                should.exist(file);
-                should.exist(file.contents);
+            stream.on('data', file => {
+                assert.notEqual(file, undefined);
+                assert.notEqual(file.contents, undefined);
                 writeFile(path.join(dest, file.relative), file.contents);
                 ++result;
             });
 
-            stream.on('end', function () {
-                result.should.be.exactly(13);
+            stream.on('end', () => {
+                assert.equal(result, 13);
                 done();
             });
 
-            glob.glob.sync('weather*.svg', {cwd: cwd}).forEach(function (file) {
+            for (const file of glob.sync('weather*.svg', { cwd })) {
                 stream.write(new Vinyl({
                     path: path.join(cwd, file),
-                    cwd: cwd,
+                    cwd,
                     base: cwd,
                     contents: fs.readFileSync(path.join(cwd, file))
                 }));
-            });
+            }
 
             stream.end();
         });
 
-        it('should match diagonal sprite', function (done) {
-            this.timeout(20000);
+        it('should match diagonal sprite', done => {
             compareSvg2Png(
-                path.join(__dirname, '..', 'tmp', 'svg', 'diagonal.svg'),
-                path.join(__dirname, '..', 'tmp', 'png', 'diagonal.png'),
-                path.join(__dirname, 'expected', 'diagonal.png'),
-                path.join(__dirname, '..', 'tmp', 'diff', 'diagonal.png'),
+                path.join(__dirname, '../tmp/svg/diagonal.svg'),
+                path.join(__dirname, '../tmp/png/diagonal.png'),
+                path.join(__dirname, 'expected/diagonal.png'),
+                path.join(__dirname, '../tmp/png/diagonal.diff.png'),
                 done,
                 'The diagonal sprite doesn\'t match the expected one!'
             );
         });
 
-        it('should match packed sprite', function (done) {
-            this.timeout(20000);
+        it('should match packed sprite', done => {
             compareSvg2Png(
-                path.join(__dirname, '..', 'tmp', 'svg', 'packed.svg'),
-                path.join(__dirname, '..', 'tmp', 'png', 'packed.png'),
-                path.join(__dirname, 'expected', 'packed.png'),
-                path.join(__dirname, '..', 'tmp', 'diff', 'packed.png'),
+                path.join(__dirname, '../tmp/svg/packed.svg'),
+                path.join(__dirname, '../tmp/png/packed.png'),
+                path.join(__dirname, 'expected/packed.png'),
+                path.join(__dirname, '../tmp/png/packed.diff.png'),
                 done,
                 'The packed sprite doesn\'t match the expected one!'
             );

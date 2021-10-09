@@ -1,23 +1,22 @@
 'use strict';
 
-/**
- * gulp-svg-sprite is a Gulp plugin for creating SVG sprites
- *
- * @see https://github.com/jkphl/gulp-svg-sprite
- *
- * @author Joschi Kuphal <joschi@kuphal.net> (https://github.com/jkphl)
- * @copyright © 2018 Joschi Kuphal
- * @license MIT https://raw.github.com/jkphl/gulp-svg-sprite/master/LICENSE.txt
- */
+const { src, dest, parallel } = require('gulp');
+const svgSprite = require('./index.js');
 
-var gulp    	= require('gulp'),
-jshint			= require('gulp-jshint');
+const svgspriteConfig = {
+    mode: {
+        css: {
+            render: {
+                css: true
+            }
+        }
+    }
+};
 
-gulp.task('lint', function () {
-    gulp.src(['test/*.js', 'index.js'])
-        .pipe(jshint('.jshintrc'))
-        .pipe(jshint.reporter('default'))
-        .pipe(jshint.reporter('fail'))
-});
+function buildSvg() {
+    return src('test/fixtures/**/*.svg')
+        .pipe(svgSprite(svgspriteConfig))
+        .pipe(dest('tmp/gulp'));
+}
 
-gulp.task('default', ['lint']);
+exports.default = parallel(buildSvg);

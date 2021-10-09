@@ -7,69 +7,78 @@
  *
  * @author Joschi Kuphal <joschi@kuphal.net> (https://github.com/jkphl)
  * @copyright © 2018 Joschi Kuphal
- * @license MIT https://raw.github.com/jkphl/gulp-svg-sprite/master/LICENSE.txt
+ * @license MIT https://github.com/svg-sprite/gulp-svg-sprite/blob/main/LICENSE
  */
 
-var through2 						= require('through2'),
-	PluginError						= require('plugin-error'),
-	SVGSpriter						= require('svg-sprite'),
+const through2 = require('through2');
+const PluginError = require('plugin-error');
+const SVGSpriter = require('svg-sprite');
 
-	PLUGIN_NAME						= 'gulp-svg-sprite';
+const PLUGIN_NAME = 'gulp-svg-sprite';
+
+// Extend plugin error
+function extendError(pError, error) {
+    if (error && (typeof error === 'object')) {
+        for (const property of ['name', 'errno']) {
+            if (property in error) {
+                pError[property] = error[property];
+            }
+        }
+    }
+
+    return pError;
+}
 
 /**
  * Plugin level function
  *
- * @param {Object} config			SVGSpriter main configuration
+ * @param {Object} config           SVGSpriter main configuration
  */
 function gulpSVGSprite(config) {
+    // Instanciate spriter instance
+    const spriter = new SVGSpriter(config);
+    let shapes = 0;
 
-	// Extend plugin error
-	function extendError(pError, error) {
-		if (error && (typeof error === 'object')) {
-			['name', 'errno'].forEach(function(property) {
-				if (property in error) {
-					this[property]	= error[property];
-				}
-			}, pError);
-		}
+    // Intercept error log and convert to plugin errors
+    spriter.config.log.error = function(message, error) {
+        this.emit('error', extendError(new PluginError(PLUGIN_NAME, message), error));
+    };
 
-		return pError;
-	}
+    return through2.obj((file, encoding, callback) => {
+        let error = null;
+        try {
+            spriter.add(file);
+            ++shapes;
+        } catch (e) {
+            error = (!e.plugin || (e.plugin !== PLUGIN_NAME)) ?
+                extendError(new PluginError(PLUGIN_NAME, e.message), e) :
+                e;
+        }
 
-	// Instanciate spriter instance
-	var spriter						= new SVGSpriter(config);
-	var shapes						= 0;
+        return callback(error);
+    }, function(callback) {
+        spriter.compile((error, result) => {
+            if (error) {
+                this.emit('error', new PluginError(PLUGIN_NAME, error));
+            } else if (shapes > 0) {
+                for (const mode in result) {
+                    if (!Object.prototype.hasOwnProperty.call(result, mode)) {
+                        continue;
+                    }
 
-	// Intercept error log and convert to plugin errors
-	spriter.config.log.error		= function(message, error) {
-		this.emit('error', extendError(new PluginError(PLUGIN_NAME, message), error));
-	};
+                    for (const resource in result[mode]) {
+                        if (!Object.prototype.hasOwnProperty.call(result[mode], resource)) {
+                            continue;
+                        }
 
-	return through2.obj(function (file, enc, cb) {
-		var error					= null;
-		try {
-			spriter.add(file);
-			++shapes;
-		} catch(e) {
-			error					= (!e.plugin || (e.plugin !== PLUGIN_NAME)) ? extendError(new PluginError(PLUGIN_NAME, e.message), e) : e;
-		}
-		return cb(error);
+                        this.push(result[mode][resource]);
+                    }
+                }
+            }
 
-	}, function(cb) {
-		var stream 					= this;
-		spriter.compile(function(error, result /*, data*/){
-			if (error) {
-				stream.emit('error', new PluginError(PLUGIN_NAME, error));
-			} else if (shapes > 0) {
-				for (var mode in result) {
-					for (var resource in result[mode]) {
-						stream.push(result[mode][resource]);
-					}
-				}
-			}
-			cb();
-		});
-	});
+            callback();
+        });
+    });
 }
 
-module.exports			= gulpSVGSprite;
+module.exports = gulpSVGSprite;
