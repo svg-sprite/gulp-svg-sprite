@@ -16,8 +16,6 @@ const { Transform } = require('stream');
 const PluginError = require('plugin-error');
 const SVGSpriter = require('svg-sprite');
 
-const { hasOwnProperty } = Object.prototype;
-
 const PLUGIN_NAME = 'gulp-svg-sprite';
 
 /**
@@ -80,12 +78,12 @@ function gulpSVGSprite(config) {
                 this.emit('error', new PluginError(PLUGIN_NAME, error));
             } else if (shapes > 0) {
                 for (const mode in result) {
-                    if (!hasOwnProperty.call(result, mode)) {
+                    if (!Object.prototype.hasOwnProperty.call(result, mode)) {
                         continue;
                     }
 
                     for (const resource in result[mode]) {
-                        if (!hasOwnProperty.call(result[mode], resource)) {
+                        if (!Object.prototype.hasOwnProperty.call(result[mode], resource)) {
                             continue;
                         }
 
