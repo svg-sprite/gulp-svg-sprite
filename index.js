@@ -10,11 +10,27 @@
  * @license MIT https://github.com/svg-sprite/gulp-svg-sprite/blob/main/LICENSE
  */
 
-const through2 = require('through2');
+/** @typedef {import('stream').TransformOptions} TransformOptions */
+
+const { Transform } = require('stream');
 const PluginError = require('plugin-error');
 const SVGSpriter = require('svg-sprite');
 
 const PLUGIN_NAME = 'gulp-svg-sprite';
+
+/**
+ * Get a new Transform stream set in Object mode, similar to through2#obj.
+ * Inspired by [metafizzy/transfob](https://github.com/metafizzy/transfob).
+ * @param {TransformOptions['transform']} transform
+ * @param {TransformOptions['flush']} flush
+ */
+function transfob(transform, flush) {
+    return new Transform({
+        flush,
+        transform,
+        objectMode: true
+    });
+}
 
 // Extend plugin error
 function extendError(pError, error) {
@@ -44,7 +60,7 @@ function gulpSVGSprite(config) {
         this.emit('error', extendError(new PluginError(PLUGIN_NAME, message), error));
     };
 
-    return through2.obj((file, encoding, callback) => {
+    return transfob((file, encoding, callback) => {
         let error = null;
         try {
             spriter.add(file);
