@@ -77,17 +77,9 @@ function gulpSVGSprite(config) {
             if (error) {
                 this.emit('error', new PluginError(PLUGIN_NAME, error));
             } else if (shapes > 0) {
-                for (const mode in result) {
-                    if (!Object.prototype.hasOwnProperty.call(result, mode)) {
-                        continue;
-                    }
-
-                    for (const resource in result[mode]) {
-                        if (!Object.prototype.hasOwnProperty.call(result[mode], resource)) {
-                            continue;
-                        }
-
-                        this.push(result[mode][resource]);
+                for (const mode of Object.values(result)) {
+                    for (const resource of Object.values(mode)) {
+                        this.push(resource);
                     }
                 }
             }
