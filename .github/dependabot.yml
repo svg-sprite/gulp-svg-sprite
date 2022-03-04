@@ -1,0 +1,8 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: monthly
+      day: thursday
+      time: "09:00"
