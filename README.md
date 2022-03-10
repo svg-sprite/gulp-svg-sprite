@@ -20,7 +20,7 @@ This document covers only gulp specific installation and configuration aspects. 
 
 First, install `gulp-svg-sprite` as a development dependency:
 
-```shell
+```sh
 npm install --save-dev gulp-svg-sprite
 ```
 
@@ -81,19 +81,17 @@ gulp.src('**/*.svg', { cwd: 'path/to/assets' })
 
 The following files and directories are created:
 
-```
-out
-`-- css
-    |-- sprite.css
-    `-- svg
-        `-- sprite.css-495d2010.svg
+```text
+out/
+├─ css/
+│  ├─ sprite.css
+│  ├─ svg/
+│  │  ├─ sprite.css-495d2010.svg
 ```
 
 > The cryptical looking part in the SVG's file name is the result of *svg-sprite*'s cache busting feature which is enabled by default for CSS sprites. We'll turn this off in the next example.
 
 #### Gulp 4 basic example
-
-In this very basic example, mostly default settings will be applied to create a traditional CSS sprite (bundle of SVG sprite and CSS stylesheet).
 
 ```js
 const { src, dest, parallel } = require('gulp');
@@ -119,17 +117,6 @@ function buildSvg() {
 exports.default = parallel(buildSvg);
 ```
 
-The following files and directories are created:
-
-```
-out
-`-- css
-    |-- sprite.css
-    `-- svg
-        `-- sprite.css-495d2010.svg
-```
-
-> The cryptical looking part in the SVG's file name is the result of *svg-sprite*'s cache busting feature which is enabled by default for CSS sprites. We'll turn this off in the next example.
 
 ### More complex example
 
@@ -174,19 +161,19 @@ gulp.src('**/*.svg', { cwd: 'path/to/assets' })
 
 The following files and directories are created:
 
-```
-out
-|-- intermediate-svg
-|   |-- weather-clear.svg
-|   |-- weather-snow.svg
-|   `-- weather-storm.svg
-|-- symbol
-|   `-- svg
-|       `-- sprite.symbol.svg
-`-- view
-    |-- sprite.scss
-    `-- svg
-        `-- sprite.view.svg
+```text
+out/
+├─ intermediate-svg
+│  ├─ weather-clear.svg
+│  ├─ weather-snow.svg
+│  ├─ weather-storm.svg
+├─ symbol/
+│  ├─ svg/
+│     ├─ sprite.symbol.svg
+├─ view/
+│  ├─ sprite.scss
+│  ├─ svg/
+│     ├─ sprite.view.svg
 ```
 
 ### Error handling
@@ -241,9 +228,9 @@ Please refer to the [changelog](CHANGELOG.md) for a complete release history.
 Copyright © 2018 Joschi Kuphal <joschi@kuphal.net> / [@jkphl](https://twitter.com/jkphl). *svg-sprite* is licensed under the terms of the [MIT license](LICENSE). The contained example SVG icons are part of the [Tango Icon Library](http://tango.freedesktop.org/Tango_Icon_Library) and belong to the Public Domain.
 
 
-[npm-url]: https://npmjs.org/package/gulp-svg-sprite
+[npm-url]: https://www.npmjs.com/package/gulp-svg-sprite
 [npm-image]: https://img.shields.io/npm/v/gulp-svg-sprite
 [npm-downloads]: https://img.shields.io/npm/dm/gulp-svg-sprite.svg
 
 [ci-url]: https://github.com/svg-sprite/gulp-svg-sprite/actions?query=workflow%3ATests+branch%3Amain
-[ci-image]: https://img.shields.io/github/workflow/status/svg-sprite/gulp-svg-sprite/Tests/main
+[ci-image]: https://img.shields.io/github/workflow/status/svg-sprite/gulp-svg-sprite/Tests/main?label=CI&logo=github
