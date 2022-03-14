@@ -220,7 +220,7 @@ please refer to the [svg-sprite manual](https://github.com/svg-sprite/svg-sprite
 
 ## Changelog
 
-Please refer to the [changelog](CHANGELOG.md) for a complete release history.
+Please refer to the [GitHub releases](https://github.com/svg-sprite/gulp-svg-sprite/releases) for a complete release history.
 
 
 ## Legal
@@ -230,7 +230,7 @@ Copyright © 2018 Joschi Kuphal <joschi@kuphal.net> / [@jkphl](https://twitter.c
 
 [npm-url]: https://www.npmjs.com/package/gulp-svg-sprite
 [npm-image]: https://img.shields.io/npm/v/gulp-svg-sprite
-[npm-downloads]: https://img.shields.io/npm/dm/gulp-svg-sprite.svg
+[npm-downloads]: https://img.shields.io/npm/dm/gulp-svg-sprite
 
 [ci-url]: https://github.com/svg-sprite/gulp-svg-sprite/actions?query=workflow%3ATests+branch%3Amain
 [ci-image]: https://img.shields.io/github/workflow/status/svg-sprite/gulp-svg-sprite/Tests/main?label=CI&logo=github
