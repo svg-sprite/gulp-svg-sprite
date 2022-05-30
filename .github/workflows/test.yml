@@ -33,7 +33,7 @@ jobs:
         run: npm test
 
       - name: Upload screenshots
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: gulp-svg-sprite-ci-${{ matrix.node }}-${{ github.sha }}
