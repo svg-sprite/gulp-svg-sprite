@@ -29,13 +29,13 @@
     "svg-sprite": "^1.5.4"
   },
   "devDependencies": {
-    "glob": "^7.2.0",
+    "glob": "^7.2.3",
     "gulp": "^4.0.2",
     "looks-same": "^7.3.0",
-    "mocha": "^9.2.0",
+    "mocha": "^9.2.2",
     "svg2png": "^4.1.1",
     "vinyl": "^2.2.1",
-    "xo": "^0.48.0"
+    "xo": "^0.50.0"
   },
   "keywords": [
     "gulpplugin",
