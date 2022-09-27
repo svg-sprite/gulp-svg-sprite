@@ -26,7 +26,7 @@
   ],
   "dependencies": {
     "plugin-error": "^1.0.1",
-    "svg-sprite": "^1.5.4"
+    "svg-sprite": "^2.0.0"
   },
   "devDependencies": {
     "glob": "^7.2.3",
