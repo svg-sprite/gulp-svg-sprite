@@ -233,4 +233,4 @@ Copyright © 2018 Joschi Kuphal <joschi@kuphal.net> / [@jkphl](https://twitter.c
 [npm-downloads]: https://img.shields.io/npm/dm/gulp-svg-sprite
 
 [ci-url]: https://github.com/svg-sprite/gulp-svg-sprite/actions?query=workflow%3ATests+branch%3Amain
-[ci-image]: https://img.shields.io/github/workflow/status/svg-sprite/gulp-svg-sprite/Tests/main?label=CI&logo=github
+[ci-image]: https://img.shields.io/github/actions/workflow/status/svg-sprite/gulp-svg-sprite/test.yml?branch=main&label=CI&logo=github
