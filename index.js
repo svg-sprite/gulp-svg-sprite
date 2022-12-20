@@ -13,6 +13,7 @@
 /** @typedef {import('stream').TransformOptions} TransformOptions */
 
 const { Transform } = require('stream');
+const util = require('util');
 const PluginError = require('plugin-error');
 const SVGSpriter = require('svg-sprite');
 
@@ -33,16 +34,20 @@ function transfob(transform, flush) {
 }
 
 // Extend plugin error
-function extendError(pError, error) {
-    if (error && (typeof error === 'object')) {
-        for (const property of ['name', 'errno']) {
-            if (property in error) {
-                pError[property] = error[property];
-            }
-        }
+function createExtendedPluginError(...args) {
+    const error = args.find(a => a instanceof Error);
+    let { message } = error;
+
+    if (args.length > 1 && typeof args[0] === 'string') {
+        message = util.format(...args);
     }
 
-    return pError;
+    const pluginError = new PluginError(PLUGIN_NAME, message || 'Unspecified error');
+    if (error) {
+        pluginError.name = error.name;
+    }
+
+    return pluginError;
 }
 
 /**
@@ -51,13 +56,13 @@ function extendError(pError, error) {
  * @param {Object} config           SVGSpriter main configuration
  */
 function gulpSVGSprite(config) {
-    // Instanciate spriter instance
+    // Instantiate spriter instance
     const spriter = new SVGSpriter(config);
     let shapes = 0;
 
     // Intercept error log and convert to plugin errors
-    spriter.config.log.error = function(message, error) {
-        this.emit('error', extendError(new PluginError(PLUGIN_NAME, message), error));
+    spriter.config.log.error = function(...args) {
+        this.emit('error', createExtendedPluginError(...args));
     };
 
     return transfob((file, encoding, callback) => {
@@ -65,10 +70,10 @@ function gulpSVGSprite(config) {
         try {
             spriter.add(file);
             ++shapes;
-        } catch (e) {
-            error = (!e.plugin || (e.plugin !== PLUGIN_NAME)) ?
-                extendError(new PluginError(PLUGIN_NAME, e.message), e) :
-                e;
+        } catch (error_) {
+            error = (!error_.plugin || (error_.plugin !== PLUGIN_NAME)) ?
+                createExtendedPluginError(error_) :
+                error_;
         }
 
         return callback(error);
