@@ -13,7 +13,7 @@
 /** @typedef {import('stream').TransformOptions} TransformOptions */
 
 const { Transform } = require('stream');
-const util = require('util');
+const { format } = require('util');
 const PluginError = require('plugin-error');
 const SVGSpriter = require('svg-sprite');
 
@@ -39,7 +39,7 @@ function createExtendedPluginError(...args) {
     let { message } = error;
 
     if (args.length > 1 && typeof args[0] === 'string') {
-        message = util.format(...args);
+        message = format(...args);
     }
 
     const pluginError = new PluginError(PLUGIN_NAME, message || 'Unspecified error');
