@@ -95,6 +95,7 @@
       "spaced-comment": "off",
       "unicorn/catch-error-name": "off",
       "unicorn/filename-case": "off",
+      "unicorn/import-style": "off",
       "unicorn/prefer-module": "off",
       "unicorn/prevent-abbreviations": "off"
     },
