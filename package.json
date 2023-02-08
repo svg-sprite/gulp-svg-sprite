@@ -25,16 +25,16 @@
     "index.js"
   ],
   "dependencies": {
-    "plugin-error": "^1.0.1",
+    "plugin-error": "^2.0.1",
     "svg-sprite": "^2.0.2"
   },
   "devDependencies": {
     "glob": "^7.2.3",
     "gulp": "^4.0.2",
     "looks-same": "^7.3.0",
-    "mocha": "^9.2.2",
+    "mocha": "^10.2.0",
     "svg2png": "^4.1.1",
-    "vinyl": "^2.2.1",
+    "vinyl": "^3.0.0",
     "xo": "^0.52.4"
   },
   "keywords": [
