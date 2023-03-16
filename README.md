@@ -2,7 +2,7 @@
 
 [![npm version][npm-image]][npm-url] [![npm downloads][npm-downloads]][npm-url] [![Build Status][ci-image]][ci-url]
 
-is a Gulp plugin wrapping around [svg-sprite](https://github.com/svg-sprite/svg-sprite) which **takes a bunch of [SVG](https://www.w3.org/TR/SVG/) files**, optimizes them and bakes them into **SVG sprites** of several types:
+gulp-svg-sprite is a Gulp plugin wrapping around [svg-sprite](https://github.com/svg-sprite/svg-sprite) which **takes a bunch of [SVG](https://www.w3.org/TR/SVG/) files**, optimizes them and bakes them into **SVG sprites** of several types:
 
 * Traditional [CSS sprites](https://en.wikipedia.org/wiki/Sprite_(computer_graphics)#Sprites_by_CSS) for use as background images,
 * CSS sprites with **pre-defined `<view>` elements**, useful for foreground images as well,
