@@ -69,7 +69,6 @@
         "error",
         "never"
       ],
-      "no-negated-condition": "off",
       "object-curly-spacing": [
         "error",
         "always"
@@ -78,17 +77,15 @@
         "error",
         "after"
       ],
-      "promise/prefer-await-to-then": "off",
       "prefer-template": "error",
       "space-before-function-paren": [
         "error",
         "never"
       ],
       "spaced-comment": "off",
-      "unicorn/catch-error-name": "off",
       "unicorn/filename-case": "off",
-      "unicorn/import-style": "off",
       "unicorn/prefer-module": "off",
+      "unicorn/prefer-string-slice": "off",
       "unicorn/prevent-abbreviations": "off"
     },
     "overrides": [
