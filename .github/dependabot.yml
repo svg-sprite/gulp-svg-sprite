@@ -4,5 +4,3 @@ updates:
     directory: "/"
     schedule:
       interval: monthly
-      day: thursday
-      time: "09:00"
