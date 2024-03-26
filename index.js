@@ -3,7 +3,7 @@
 /**
  * gulp-svg-sprite is a Gulp plugin for creating SVG sprites
  *
- * @see https://github.com/jkphl/gulp-svg-sprite
+ * @see https://github.com/svg-sprite/gulp-svg-sprite
  *
  * @author Joschi Kuphal <joschi@kuphal.net> (https://github.com/jkphl)
  * @copyright © 2018 Joschi Kuphal

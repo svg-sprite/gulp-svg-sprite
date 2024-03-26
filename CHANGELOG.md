@@ -11,7 +11,7 @@
 
 * Compatible with [svg-sprite 1.4.0](https://github.com/svg-sprite/svg-sprite/tree/v1.4.0)
 * Updated dependencies
-* Drop dependency on deprecated `gulp-util` ([#74](https://github.com/jkphl/gulp-svg-sprite/issues/74), [#75](https://github.com/jkphl/gulp-svg-sprite/issues/75))
+* Drop dependency on deprecated `gulp-util` ([#74](https://github.com/svg-sprite/gulp-svg-sprite/issues/74), [#75](https://github.com/svg-sprite/gulp-svg-sprite/issues/75))
 
 ## 1.3.7 Compatibility release (2017-06-01)
 
@@ -22,7 +22,7 @@
 
 * Compatible with [svg-sprite 1.3.6](https://github.com/svg-sprite/svg-sprite/tree/v1.3.6)
 * Fixed LESS template mixin call ([svg-sprite #187](https://github.com/svg-sprite/svg-sprite/pull/187))
-* Fixed broken keyframe animation support ([#63](https://github.com/jkphl/gulp-svg-sprite/issues/63))
+* Fixed broken keyframe animation support ([#63](https://github.com/svg-sprite/gulp-svg-sprite/issues/63))
 
 ## 1.3.5 Compatibility release (2016-08-15)
 
@@ -48,8 +48,8 @@
 ## 1.3.1 Bugfix release (2016-05-17)
 
 * Compatible with [svg-sprite 1.3.1](https://github.com/svg-sprite/svg-sprite/tree/v1.3.1)
-* Fixed modeless run ([svg-sprite #158](https://github.com/svg-sprite/svg-sprite/issues/158), [#42](https://github.com/jkphl/gulp-svg-sprite/issues/42))
-* Fixed broken shape dimension attribute removal in symbol mode ([#51](https://github.com/jkphl/gulp-svg-sprite/issues/51))
+* Fixed modeless run ([svg-sprite #158](https://github.com/svg-sprite/svg-sprite/issues/158), [#42](https://github.com/svg-sprite/gulp-svg-sprite/issues/42))
+* Fixed broken shape dimension attribute removal in symbol mode ([#51](https://github.com/svg-sprite/gulp-svg-sprite/issues/51))
 
 ## 1.3.0 Major maintenance release (2016-05-16)
 
@@ -100,7 +100,7 @@
 * Compatible with [svg-sprite 1.2.14](https://github.com/svg-sprite/svg-sprite/tree/v1.2.14)
 * Updated dependencies & test fixtures
 * Added Node.js versions 4 & 5 to Travis tests
-* Fixed broken svg4everybody links ([svg-sprite #122](https://github.com/svg-sprite/svg-sprite/issues/122), [#39](https://github.com/jkphl/gulp-svg-sprite/issues/39))
+* Fixed broken svg4everybody links ([svg-sprite #122](https://github.com/svg-sprite/svg-sprite/issues/122), [#39](https://github.com/svg-sprite/gulp-svg-sprite/issues/39))
 
 ## 1.2.13 Maintenance release (2015-11-06)
 
@@ -146,14 +146,14 @@
 ## 1.2.5 Maintenance release (2015-06-24)
 
 * Compatible with [svg-sprite 1.2.5](https://github.com/svg-sprite/svg-sprite/tree/v1.2.5)
-* Documentation changes ([#27](https://github.com/jkphl/gulp-svg-sprite/issues/27))
+* Documentation changes ([#27](https://github.com/svg-sprite/gulp-svg-sprite/issues/27))
 * Updated dependencies
 * Changed sprite file name handling ([svg-sprite #97](https://github.com/svg-sprite/svg-sprite/issues/97))
 
 ## 1.2.4 Maintenance release (2015-6-17)
 
 * Compatible with [svg-sprite 1.2.4](https://github.com/svg-sprite/svg-sprite/tree/v1.2.4)
-* Made vinyl a regular dependency in [preparation for npm@3](http://blog.npmjs.org/post/110924823920/npm-weekly-5) ([#25](https://github.com/jkphl/gulp-svg-sprite/issues/25))
+* Made vinyl a regular dependency in [preparation for npm@3](http://blog.npmjs.org/post/110924823920/npm-weekly-5) ([#25](https://github.com/svg-sprite/gulp-svg-sprite/issues/25))
 * Updated dependencies
 
 ## 1.2.3 Bugfix release (2015-06-08)
@@ -165,7 +165,7 @@
 
 * Compatible with [svg-sprite 1.2.2](https://github.com/svg-sprite/svg-sprite/tree/v1.2.2)
 * Introduced "icon" box sizing strategy ([svg-sprite #57](https://github.com/svg-sprite/svg-sprite/pull/57), [grunt-svg-sprite #35](https://github.com/jkphl/grunt-svg-sprite/issues/35#issuecomment-74232726))
-* Fixed regression bug introduced by [#23](https://github.com/jkphl/gulp-svg-sprite/pull/23) ([#24](https://github.com/jkphl/gulp-svg-sprite/issues/24))
+* Fixed regression bug introduced by [#23](https://github.com/svg-sprite/gulp-svg-sprite/pull/23) ([#24](https://github.com/svg-sprite/gulp-svg-sprite/issues/24))
 
 ## 1.2.1 Feature release (2015-06-04)
 
@@ -243,7 +243,7 @@
 ## v1.0.13 Maintenance (2015-01-28)
 
 * Compatible with [svg-sprite 1.0.13](https://github.com/svg-sprite/svg-sprite/tree/v1.0.13)
-* Fixed windows path separator bug ([#6](https://github.com/jkphl/gulp-svg-sprite/issues/6))
+* Fixed windows path separator bug ([#6](https://github.com/svg-sprite/gulp-svg-sprite/issues/6))
 * Made dimension attributes (width & height) optional ([svg-sprite #45](https://github.com/svg-sprite/svg-sprite/issues/45))
 * Added cache busting option for non-CSS sprites ([svg-sprite #48](https://github.com/svg-sprite/svg-sprite/issues/48))
 
@@ -297,4 +297,4 @@
 ## v1.0.4 Bugfix release
 
 * Compatible with [svg-sprite 1.0.4](https://github.com/svg-sprite/svg-sprite/tree/v1.0.4)
-* Fixed XML & doctype declaration bug with inline sprites ([#2](https://github.com/jkphl/gulp-svg-sprite/issues/2)
+* Fixed XML & doctype declaration bug with inline sprites ([#2](https://github.com/svg-sprite/gulp-svg-sprite/issues/2)
