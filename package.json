@@ -13,29 +13,29 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=12"
+    "node": ">=18"
   },
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "lint": "xo",
     "fix": "xo --fix",
     "mocha": "_mocha",
     "test": "gulp && npm run mocha"
   },
-  "files": [
-    "index.js"
-  ],
   "dependencies": {
     "plugin-error": "^2.0.1",
-    "svg-sprite": "^2.0.3"
+    "svg-sprite": "^3.0.0-rc3"
   },
   "devDependencies": {
     "glob": "^7.2.3",
     "gulp": "^5.0.0",
     "looks-same": "^7.3.0",
-    "mocha": "^10.3.0",
+    "mocha": "^11.1.0",
     "svg2png": "^4.1.1",
     "vinyl": "^3.0.0",
-    "xo": "^0.52.4"
+    "xo": "^0.60.0"
   },
   "keywords": [
     "gulpplugin",
@@ -60,11 +60,16 @@
     "mustache"
   ],
   "xo": {
-    "space": 4,
+    "space": true,
     "rules": {
       "arrow-body-style": "off",
       "capitalized-comments": "off",
-      "camelcase": "off",
+      "camelcase": [
+        "error",
+        {
+          "properties": "never"
+        }
+      ],
       "comma-dangle": [
         "error",
         "never"
@@ -78,19 +83,23 @@
         "after"
       ],
       "prefer-template": "error",
+      "promise/prefer-await-to-then": "off",
       "space-before-function-paren": [
         "error",
         "never"
       ],
       "spaced-comment": "off",
       "unicorn/filename-case": "off",
+      "unicorn/no-negated-condition": "off",
       "unicorn/prefer-module": "off",
       "unicorn/prefer-string-slice": "off",
       "unicorn/prevent-abbreviations": "off"
     },
     "overrides": [
       {
-        "files": "test/**/*.js",
+        "files": [
+          "test/**/*.js"
+        ],
         "envs": [
           "mocha"
         ]
