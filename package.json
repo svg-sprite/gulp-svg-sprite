@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "glob": "^7.2.3",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "looks-same": "^7.3.0",
     "mocha": "^10.3.0",
     "svg2png": "^4.1.1",
